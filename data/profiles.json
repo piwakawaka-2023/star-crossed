@@ -1,0 +1,56 @@
+
+[
+  {
+    "id": 1,
+    "name": "Steve",
+    "age": 23,
+    "gender": "Male",
+    "preference": "Female",
+    "bio": "I'm a test dumby",
+    "birthday": "1/1/2000",
+    "image": "",
+    "star-sign": "",
+    "matches": ":[",
+    "compatibility": "none"
+  },
+  {
+    "id": 2,
+    "name": "Jane",
+    "age": 20,
+    "gender": "Female",
+    "preference": "Male",
+    "bio": "I'm a test dumby too",
+    "birthday": "4/4/2003",
+    "image": "",
+    "star-sign": "",
+    "matches": ":]",
+    "compatibility": "Empty"
+  },
+  {
+    "id": 3,
+    "name": "Richard",
+    "age": 40,
+    "gender": "Male",
+    "preference": "Female",
+    "bio": "I'm a test dumby as well",
+    "birthday": "1/1/1983",
+    "image": "",
+    "star-sign": "",
+    "matches": ":[",
+    "compatibility": "none"
+  },
+  {
+    "id": 4,
+    "name": "Dylan",
+    "age": 27,
+    "gender": "Other",
+    "preference": "Male & Female",
+    "bio": "I'm a test dumby as well too",
+    "birthday": "1/1/1996",
+    "image": "",
+    "star-sign": "",
+    "matches": ":|",
+    "compatibility": "Some"
+  }
+
+]
