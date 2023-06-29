@@ -19,3 +19,35 @@ The dating app written in and by the stars
   | compatibility | string | Stringified array of compatibility preferences |
   
   ---
+
+### star_signs 
+  | Row Name | Data Type | Summary |
+  | --- | --- | --- |
+  | id | increments | Primary Key |
+  | date_range | string | Compared to user’s birthday to determine sign |
+  | name | string | |
+  | blurb | string | |
+  | image | string | File Path to icon image |
+  | default_compatibility | string | Stringified array of compatibility info used as the default for users of this sign |
+  
+  ---
+
+### conversations 
+  | Row Name | Data Type | Summary |
+  | --- | --- | --- |
+  | id | increments | Primary Key |
+  | participants | string | Joins with user.user_id using info from user.matches |
+  | messages | string | Stringified array of message ids in chronological order, joins to messages.id |
+  | read | string | Flag to show if there are new messages |
+  
+  ---
+
+### messages 
+  | Row Name | Data Type | Summary |
+  | --- | --- | --- |
+  | id | increments | Primary Key |
+  | user_id | integer | Joins to users.id |
+  | date | string | |
+  | contents | string | |
+  
+  ---
