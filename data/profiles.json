@@ -8,7 +8,7 @@
     "preference": "Female",
     "bio": "I'm a test dumby",
     "birthday": "1/1/2000",
-    "image": "",
+    "image": "../images/steve.jpg",
     "star-sign": "",
     "matches": ":[",
     "compatibility": "none"
@@ -21,8 +21,8 @@
     "preference": "Male",
     "bio": "I'm a test dumby too",
     "birthday": "4/4/2003",
-    "image": "",
-    "star-sign": "",
+    "image": "../images/Jane.jpg",
+    "star_sign": "",
     "matches": ":]",
     "compatibility": "Empty"
   },
@@ -34,7 +34,7 @@
     "preference": "Female",
     "bio": "I'm a test dumby as well",
     "birthday": "1/1/1983",
-    "image": "",
+    "image": "../images/Richard.jpg",
     "star-sign": "",
     "matches": ":[",
     "compatibility": "none"
@@ -47,7 +47,7 @@
     "preference": "Male & Female",
     "bio": "I'm a test dumby as well too",
     "birthday": "1/1/1996",
-    "image": "",
+    "image": "../images/Dylan.jpg",
     "star-sign": "",
     "matches": ":|",
     "compatibility": "Some"
