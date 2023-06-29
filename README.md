@@ -68,3 +68,18 @@ The dating app written in and by the stars
 | Patch | editSign | /api/v1/starsigns/:id | Yes | Update a star sign | status(200) |
 
   ---
+
+## Views/Components (Client Side)
+
+  | name | purpose |
+  | --- | --- |
+  | App | Apps entry point/base component |
+  | Landing | Landing page with logo entry button | 
+  | Login | Login page to identify if user is authenticated or needs an account |
+  | Signup | Page for user to create account |
+  | Personal Profile | Shows users profile + options to edit each field |
+  | Home | shows you a potential match, can swipe through them|
+  | Chats | Shows all chats in chronological order |
+  | Chat | Show a chat with the users name, startsign, and the most recent chat |
+  | Nav | Navbar component |
+  
