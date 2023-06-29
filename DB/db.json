@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "name": "Steve",
+    "age": 27,
+    "gender": "Male",
+    "preference": "female",
+    "bio": "I am pretty Dull",
+    "birthday": "23/04/1996",
+    "image": "",
+    "star-Sign": "♉",
+    "matches": "Sarah",
+    "compatibility": "Not great"
+  },
+  {
+    "id": 2,
+    "name": "Stacey",
+    "age": 23,
+    "gender": "Female",
+    "preference": "Male",
+    "bio": "I'm one of the guys",
+    "birthday": "10/10/1999",
+    "image": "",
+    "star-Sign": "♎",
+    "matches": "Steve",
+    "compatibility": "Not great"
+  }
+]

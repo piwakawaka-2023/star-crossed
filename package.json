@@ -48,5 +48,9 @@
     "semi": false,
     "singleQuote": true
   },
-  "browserslist": "> 2%, not dead"
+  "browserslist": "> 2%, not dead",
+  "dependencies": {
+    "react-burger-menu": "^3.0.9",
+    "scss": "^0.2.4"
+  }
 }
