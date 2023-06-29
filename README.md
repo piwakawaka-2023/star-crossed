@@ -18,7 +18,6 @@ The dating app written in and by the stars
   | matches | string | Stringified array of matches. This is used to build queries to show your convos |
   | compatibility | string | Stringified array of compatibility preferences |
   
-  ---
 
 ### star_signs 
   | Row Name | Data Type | Summary |
@@ -30,7 +29,6 @@ The dating app written in and by the stars
   | image | string | File Path to icon image |
   | default_compatibility | string | Stringified array of compatibility info used as the default for users of this sign |
   
-  ---
 
 ### conversations 
   | Row Name | Data Type | Summary |
@@ -40,7 +38,6 @@ The dating app written in and by the stars
   | messages | string | Stringified array of message ids in chronological order, joins to messages.id |
   | read | string | Flag to show if there are new messages |
   
-  ---
 
 ### messages 
   | Row Name | Data Type | Summary |
@@ -50,4 +47,24 @@ The dating app written in and by the stars
   | date | string | |
   | contents | string | |
   
+  ---
+
+## API client - server
+
+### Users 
+| Method | API Function Name | Endpoint | Protected | Usage | Response |
+| --- | --- | --- | --- | --- | --- |
+| Get | fetchUsers | /api/v1/users | No | Get a list of users from the DB | Array of Objects|
+| Get | fetchUser | /api/v1/users/:id | Yes | Get an individual users details | Object |
+| Post | addUser | /api/v1/users | Yes | Add user to database | Array of single object |
+| Patch | editUser | /api/v1/users/:id | Yes | Update a user | status(200) |
+| Delete | removeUser | /api/v1/users/:id | Yes | Delete a user | status(200) |
+
+### Starsigns 
+| Method | API Function Name | Endpoint | Protected | Usage | Response |
+| --- | --- | --- | --- | --- | --- |
+| Get | fetchSigns | /api/v1/starsigns | No | Get a list of star signs from the DB | Array of Objects|
+| Get | fetchSign | /api/v1/starsigns/:id | Yes | Get a star sign's details | Object |
+| Patch | editSign | /api/v1/starsigns/:id | Yes | Update a star sign | status(200) |
+
   ---
