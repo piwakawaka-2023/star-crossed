@@ -1,11 +1,11 @@
 import Header from './Header'
-import  Profile  from './Profile'
+import DisplayProfile from './Profile'
 
 function App() {
   return (
     <div>
       <Header />
-      <Profile />
+      <DisplayProfile />
     </div>
   )
 }
