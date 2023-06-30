@@ -1,4 +1,5 @@
-import Header from "./Header"
+import Header from './Header'
+import  Profile  from './Profile'
 
 function App() {
   return (
@@ -6,6 +7,7 @@ function App() {
       <Header />
       <h1>App</h1>
       <p>React development has begun!</p>
+      <Profile />
     </div>
   )
 }
