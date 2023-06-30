@@ -5,4 +5,5 @@
 
 
 //import component SCSS
-@import './header.scss';
+@use './header.scss';
+@use './profiles.scss';
