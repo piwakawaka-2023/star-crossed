@@ -7,8 +7,8 @@
     "preference": "female",
     "bio": "I am pretty Dull",
     "birthday": "23/04/1996",
-    "image": "",
-    "star-Sign": "♉",
+    "image": "../images/Steve.jpg",
+    "starSign": "♉",
     "matches": "Sarah",
     "compatibility": "Not great"
   },
@@ -20,8 +20,8 @@
     "preference": "Male",
     "bio": "I'm one of the guys",
     "birthday": "10/10/1999",
-    "image": "",
-    "star-Sign": "♎",
+    "image": "../images/Stacey.jpg",
+    "starSign": "♎",
     "matches": "Steve",
     "compatibility": "Not great"
   }

@@ -7,7 +7,7 @@ export interface Profile {
   bio: string
   birthday: string
   image: string
-  star_Sign: string
+  starSign: string
   matches: string
   compatibility: string
 }
@@ -20,7 +20,7 @@ export interface UserProfile {
   bio: string
   birthday: string
   image: string
-  star_Sign: string
+  starSign: string
   matches: string
   compatibility: string
 }
