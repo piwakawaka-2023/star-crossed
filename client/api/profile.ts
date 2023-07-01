@@ -1,25 +1,41 @@
 /****************
  *      API     *
  ****************/
-
+import request from 'superagent'
 import type { Profile } from '../../models/profile'
+const apiRoute = 'http://localhost:3000'
 
-export async function getProfiles() {
-  const res = await fetch('/api/v1/profiles')
+// GET PROFILES
+
+export function getProfiles() {
   try {
-    const profiles = await res.json()
-    return profiles as Profile[]
-  } catch (error) {
-    console.log(error, 'Route Error!')
+    return request.get(`${apiRoute}/users`).then((res) => {
+      return res.body
+    })
+  } catch (err) {
+    return err
   }
 }
 
-export async function getOneProfile(id: number) {
-  const res = await fetch(`/api/v1/profiles/${id}`)
+// GET ONE PROFILE BY USER ID
+
+export function getProfileById(id: number) {
   try {
-    const profile = await res.json()
-    return profile as Profile
-  } catch (error) {
-    console.log(console.log(error, 'Route Error!'))
+    return request.get(`${apiRoute}/users/${id}`).then((res) => {
+      console.log(res.body)
+      return res.body
+    })
+  } catch (err) {
+    return err
   }
 }
+
+// export function getOneProfile(id: number) {
+//   const res = await fetch(`/users/${id}`)
+//   try {
+//     const profile = await res.json()
+//     return profile as Profile
+//   } catch (error) {
+//     console.log(console.log(error, 'Route Error!'))
+//   }
+// }
