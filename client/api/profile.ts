@@ -2,7 +2,7 @@
  *      API     *
  ****************/
 import request from 'superagent'
-const apiRoute = 'http://localhost:3000'
+const apiRoute = 'http://localhost:3000/api/v1'
 
 // GET PROFILES
 
