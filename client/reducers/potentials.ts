@@ -3,7 +3,10 @@ import { SET_POTENTIALS, DEL_POTENTIAL } from '../actions/potentials'
 
 const initialState = [] as User[]
 
-export default function matchesReducer(state = initialState, action: Action) {
+export default function potentialsReducer(
+  state = initialState,
+  action: Action
+) {
   const { type, payload } = action
   switch (type) {
     case SET_POTENTIALS:
