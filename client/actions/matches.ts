@@ -41,22 +41,23 @@ export function setMatchesThunk(matches: User[]): ThunkAction {
   }
 }
 
-//TODO figure our a way to get current matches
-export function addMatchThunk(match: User): ThunkAction {
+export function addMatchThunk(match: User, matches: User[]): ThunkAction {
   return async (dispatch) => {
     try {
-      const newProfile = await api.editUser({ matches: match })
-      dispatch(addMatch(newProfile))
+      const newMatches = await api.editUser({ matches: [...matches, match] })
+      dispatch(addMatch(newMatches))
     } catch (err) {
       console.log('action err:', err)
     }
   }
 }
 
-export function delMatchThunk(id: number): ThunkAction {
+export function delMatchThunk(id: number, matches: User[]): ThunkAction {
   return async (dispatch) => {
     try {
-      const updated = await api.editUser({ matches: matches })
+      const updated = await api.editUser({
+        matches: matches.filter((match) => match.id !== id),
+      })
       dispatch(delMatch(id))
     } catch (err) {
       console.log('action err:', err)

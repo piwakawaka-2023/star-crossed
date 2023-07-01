@@ -38,3 +38,5 @@ export type Action =
   | { type: 'SET_MATCHES'; payload: User[] }
   | { type: 'DEL_MATCH'; payload: number }
   | { type: 'ADD_MATCH'; payload: User }
+  | { type: 'SET_POTENTIALS'; payload: User[] }
+  | { type: 'DEL_POTENTIAL'; payload: number }
