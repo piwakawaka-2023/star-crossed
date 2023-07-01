@@ -2,7 +2,6 @@
  *      API     *
  ****************/
 import request from 'superagent'
-import type { Profile } from '../../models/profile'
 const apiRoute = 'http://localhost:3000'
 
 // GET PROFILES
