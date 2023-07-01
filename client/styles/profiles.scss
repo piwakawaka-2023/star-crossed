@@ -4,6 +4,19 @@
   top: 200px;
 }
 
+.top-container {
+  width: 100%;
+  #starSign{
+  top: -156%;
+  float: right;
+  width: 5%;
+  position: relative;
+  }
+  p{
+    width: 40%
+  }
+}
+
 img {
   width: 700px;
   height: auto;
