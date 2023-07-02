@@ -1,7 +1,11 @@
 .profile-container {
   position: relative;
   text-align: center;
-  top: 200px;
+  top: 100px;
+  border: 1px, solid, black;
+  margin: 10px 0;
+  overflow: scroll;
+  
 }
 
 .top-container {
@@ -30,4 +34,5 @@ h1 {
   font-size: 40px;
   border-top: 2px, solid black;
   padding: 2px;
+  margin-bottom: 15%;
 }
