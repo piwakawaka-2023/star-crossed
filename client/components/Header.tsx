@@ -4,7 +4,6 @@
 import { Link } from 'react-router-dom'
 import Login from './Login'
 
-//function
 export default function Header() {
   return (
     <div className="header-container">
