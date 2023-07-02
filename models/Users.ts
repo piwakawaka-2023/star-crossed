@@ -28,6 +28,16 @@ export interface EditUserData {
 
 export interface User extends UserData {
   id: number
+  star_sign: {
+    id: number
+    dateRange: string
+    name: string
+    blurb: string
+    image: string
+    defaultCompatibility: string
+    created_at: string
+    updated_at: string
+  }
 }
 
 export type Action =
