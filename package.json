@@ -19,6 +19,7 @@
   "author": "Dev Academy Aotearoa",
   "license": "ISC",
   "devDependencies": {
+    "@auth0/auth0-react": "^1.12.0",
     "@devacademy/eslint-config": "^1.8.0",
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.23",
@@ -40,7 +41,7 @@
     "prettier": "2.6.1",
     "react": "^18.0.2",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.2",
+    "react-router-dom": "^6.14.1",
     "typescript": "~4.8.4",
     "vite": "^4.2.1",
     "vitest": "^0.30.1"
@@ -51,6 +52,7 @@
   },
   "browserslist": "> 2%, not dead",
   "dependencies": {
+    "@auth0/auth0-react": "^1.12.0",
     "react-burger-menu": "^3.0.9",
     "sass": "^1.63.6",
     "scss": "^0.2.4",
