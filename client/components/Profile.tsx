@@ -1,19 +1,15 @@
-/****************
- *    Profile   *
- ****************/
-
-import { UserProfile, Profile } from '../../models/profile'
+import { User } from '../../models/Users'
 import data from '../../data/db.json'
 import { useState } from 'react'
-import * as api from '../api/profile'
+import * as api from '../apis/profile'
 
 export default function DisplayProfile() {
   //Test Data
   const testProfile = data[0]
-  const [profiles, setProfiles] = useState([] as Profile[])
+  const [profiles, setProfiles] = useState([] as User[])
 
   async function handleClick() {
-    const newData = (await api.getProfiles()) as Profile[]
+    const newData = await api.getProfiles()
     setProfiles(newData)
   }
 
@@ -22,7 +18,7 @@ export default function DisplayProfile() {
       {/* Test button */}
       <button onClick={() => handleClick()}>Test API CALL</button>
       {profiles.map((user) => {
-        return <h2 key={user.id}>{`${user.name} ${user.star_sign.name}`}</h2>
+        return <h2 key={user.id}>{`${user.name} ${user.starSignId}`}</h2>
       })}
       <h1>
         {testProfile.name}&apos;s Profile {testProfile.starSign}
