@@ -18,7 +18,7 @@ export default function DisplayProfile() {
       {/* Test button */}
       <button onClick={() => handleClick()}>Test API CALL</button>
       {profiles.map((user) => {
-        return <h2 key={user.id}>{`${user.name} ${user.starSignId}`}</h2>
+        return <h2 key={user.id}>{`${user.name} ${user.star_sign.name}`}</h2>
       })}
       <h1>
         {testProfile.name}&apos;s Profile {testProfile.starSign}
