@@ -28,13 +28,3 @@ export function getProfileById(id: number) {
     return err
   }
 }
-
-// export function getOneProfile(id: number) {
-//   const res = await fetch(`/users/${id}`)
-//   try {
-//     const profile = await res.json()
-//     return profile as Profile
-//   } catch (error) {
-//     console.log(console.log(error, 'Route Error!'))
-//   }
-// }
