@@ -8,5 +8,4 @@ import './styles/index.scss'
 
 document.addEventListener('DOMContentLoaded', () => {
   createRoot(document.getElementById('app') as HTMLElement).render(<App />)
-}
-
+})

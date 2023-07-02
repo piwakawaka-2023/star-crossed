@@ -55,7 +55,7 @@ export function addMatchThunk(match: User, matches: User[]): ThunkAction {
 export function delMatchThunk(id: number, matches: User[]): ThunkAction {
   return async (dispatch) => {
     try {
-      const updated = await api.editUser({
+      await api.editUser({
         matches: matches.filter((match) => match.id !== id),
       })
       dispatch(delMatch(id))
