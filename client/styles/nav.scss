@@ -1,0 +1,47 @@
+.nav-container {
+  position: relative;
+  box-sizing: border-box;
+  background-color: pink;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem;
+
+  position: fixed;
+  bottom: 0;
+  left: 0%;
+  height: 5%;
+ ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+ }
+
+ li{width: 30%;
+ }
+
+ li.active{
+  background-color: #555;
+
+ }
+ li:hover{
+  background-color: #777;
+ }
+}
+
+.nav-item {
+  
+  a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: .25rem;
+  }
+  img {
+    height: 100%;
+    width:auto;
+  }
+}
