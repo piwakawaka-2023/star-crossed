@@ -13,18 +13,19 @@ export default function DisplayProfile() {
   const [profiles, setProfiles] = useState([] as Profile[])
 
   async function handleClick() {
-    const newData = await api.getProfiles()
+    const newData = (await api.getProfiles()) as Profile[]
     setProfiles(newData)
   }
 
   return (
     <div className="profile-container">
       {/* Test button */}
-      {/* <button onClick={handleClick}></button> */}
-
+      <button onClick={() => handleClick()}>Test API CALL</button>
+      {profiles.map((user) => {
+        return <h2 key={user.id}>{`${user.name} ${user.star_sign.name}`}</h2>
+      })}
       <h1>
-        {/* eslint-disable-next-line react/no-unescaped-entities*/}
-        {testProfile.name}'s Profile {testProfile.starSign}
+        {testProfile.name}&apos;s Profile {testProfile.starSign}
       </h1>
 
       <img src={'/' + testProfile.image} alt="Steve's profile" />
