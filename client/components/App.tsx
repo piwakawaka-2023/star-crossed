@@ -1,13 +1,12 @@
 import Header from './Header'
-import DisplayProfile from './Profile'
-import Login from './Login'
+import { Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function App() {
   return (
     <div>
       <Header />
-      <Login />
-      <DisplayProfile />
+      <Outlet />
     </div>
   )
 }

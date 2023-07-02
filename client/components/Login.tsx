@@ -12,8 +12,7 @@ function Login() {
     loginWithRedirect()
   }
   return (
-    <div>
-      <h1>Auth Options Here!</h1>
+    <>
       <IfAuthenticated>
         <button onClick={handleSignOut}>Sign out</button>
         {user && <p>Signed in as: {user?.nickname}</p>}
@@ -21,7 +20,8 @@ function Login() {
       <IfNotAuthenticated>
         <button onClick={handleSignIn}>Sign in</button>
       </IfNotAuthenticated>
-    </div>
+      <h1>Big HEader</h1>
+    </>
   )
 }
 
