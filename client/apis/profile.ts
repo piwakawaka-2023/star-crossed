@@ -1,27 +1,50 @@
 import request from 'superagent'
 
-import { User } from '../../models/Users'
+import { EditUserData, User, UserData } from '../../models/Users'
 
 const apiRoute = 'http://localhost:3000/api/v1'
 
 // GET PROFILES
-export function getProfiles() {
+export async function fetchUsers() {
   try {
-    return request.get(`${apiRoute}/users`).then((res) => {
-      return res.body
-    })
+    const res = await request.get(`${apiRoute}/users`)
+    return res.body
   } catch (err) {
     return err
   }
 }
 
 // GET PROFILE BY USER ID
-export function getProfileById(id: number) {
+export async function fetchUser(id: number) {
   try {
-    return request.get(`${apiRoute}/users/${id}`).then((res) => {
-      console.log(res.body)
-      return res.body
-    })
+    const res = await request.get(`${apiRoute}/users/${id}`)
+    return res.body
+  } catch (err) {
+    return err
+  }
+}
+
+export async function addUser(user: UserData) {
+  try {
+    const res = await request.post(`${apiRoute}/users`).send(user)
+    return res.body
+  } catch (err) {
+    return err
+  }
+}
+
+export async function editUser(id: number, user: EditUserData) {
+  try {
+    const res = await request.patch(`${apiRoute}/users/${id}`).send(user)
+    return res.body
+  } catch (err) {
+    return err
+  }
+}
+
+export async function removeUser(id: number) {
+  try {
+    await request.delete(`${apiRoute}/users/${id}`)
   } catch (err) {
     return err
   }
