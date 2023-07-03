@@ -7,7 +7,6 @@ export default function Header() {
       <h2 className="title">Star Crossed</h2>
       <div className="logout-container">
         <Link to="/"></Link>
-        <Login />
       </div>
     </div>
   )

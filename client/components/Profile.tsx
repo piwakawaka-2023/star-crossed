@@ -16,12 +16,24 @@ function Profile() {
 
   return (
     <div className="profile-container">
+<<<<<<< HEAD
       <Header />
       <h1>Your Profile</h1>
       <div className="">
         <h3>Images:</h3>
         <button>edit</button>
       </div>
+=======
+      {/* Test button */}
+      <button onClick={() => handleClick()}>Test API CALL</button>
+      {profiles.map((user) => {
+        return <h2 key={user.id}>{`${user.name} ${user.star_sign.name}`}</h2>
+      })}
+      <h1>
+        {testProfile.name}&apos;s Profile {testProfile.starSign}
+      </h1>
+
+>>>>>>> 9eed50fa19f30dd5770155122b6826bda8f7651b
       <img src={'/' + testProfile.image} alt="Steve's profile" />
       <div className="">
         <h3>Bio:</h3>

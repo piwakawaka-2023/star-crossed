@@ -1,6 +1,6 @@
 import { User, UserData, EditUserData } from '../../models/Users'
 
-import * as api from '../apis/users'
+import * as api from '../apis/profile'
 import { ThunkAction } from '../store'
 
 export const SET_PROFILE = 'SET_PROFILE'
@@ -40,10 +40,10 @@ export function delProfile(id: number) {
 
 //* Thunk Actions
 
-export function setUserThunk(profileId: number): ThunkAction {
+export function setUserThunk(auth0Id: string): ThunkAction {
   return async (dispatch) => {
     try {
-      const profile = await api.fetchUser()
+      const profile = await api.getProfileWithAuthInfo(auth0Id)
       dispatch(setProfile(profile))
     } catch (err) {
       console.log('action err:', err)
