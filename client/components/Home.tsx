@@ -4,6 +4,7 @@ import { useState } from 'react'
 import * as api from '../apis/profile'
 
 import Header from './Header'
+import Nav from './Nav'
 
 function Home() {
   //* Test data
@@ -40,6 +41,7 @@ function Home() {
         <p className="profile-Info">{testProfile.compatibility}</p>
       </div>
       )
+      <Nav />
     </>
   )
 }

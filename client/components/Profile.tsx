@@ -9,7 +9,7 @@ export default function DisplayProfile() {
   const [profiles, setProfiles] = useState([] as User[])
 
   async function handleClick() {
-    const newData = await api.getProfiles()
+    const newData = await api.fetchUser(0)
     setProfiles(newData)
   }
 

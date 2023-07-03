@@ -1,7 +1,6 @@
 //Components
 
-import Header from './Header'
-import Landing from './Landing'
+
 
 import { Outlet } from 'react-router-dom'
 
