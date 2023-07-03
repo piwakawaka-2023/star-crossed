@@ -51,8 +51,8 @@ export interface NewUser {
   birthday: string
   image: string
   star_sign_id: number
-  matches: ''
-  compatibility: ''
+  matches: string
+  compatibility: string
 }
 
 export type Action =

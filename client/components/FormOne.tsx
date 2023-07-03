@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent } from 'react'
 import { NewUser } from '../../models/Users'
 import { fetchStarSigns } from '../apis/starSigns'
 import { StarSign } from '../../models/StarSigns'
@@ -21,16 +21,42 @@ export default function FormOne(props: Props) {
     })
   }
 
+  function getAge(year: string, month: string, day: string) {
+    const calendar = {
+      jan: 1,
+      feb: 2,
+      mar: 3,
+      apr: 4,
+      may: 5,
+      jun: 6,
+      jul: 7,
+      aug: 8,
+      sep: 9,
+      oct: 10,
+      nov: 11,
+      dec: 12,
+    }
+    const today = new Date(Date.now())
+    const [wkday, thisMonth, thisDay, thisYear] = String(today).split(' ')
+    const thisMonthNumber =
+      calendar[thisMonth.toLowerCase() as keyof typeof calendar]
+    let age = 0
+    if (Number(month) === thisMonthNumber && Number(day) < Number(thisDay)) {
+      age = Number(thisYear) - Number(year) - 1
+    } else if (Number(month) > thisMonthNumber) {
+      age = Number(thisYear) - Number(year) - 1
+    } else {
+      age = Number(thisYear) - Number(year)
+    }
+    return age
+  }
+
   async function getStarSign(evt: FormEvent) {
     evt.preventDefault()
-    console.log('finding your star sign')
     const [year, month, day] = newUser.birthday.split('-')
     const starSigns = (await fetchStarSigns()) as StarSign[]
-    console.log(starSigns)
-    console.log(`${month} / ${day}`)
+    const age = await getAge(year, month, day)
     starSigns.forEach((sign) => {
-      //split sign date range and run comparison
-      //if month matches, check day
       const range = sign.date_range.split('-')
       const [monthOne, dayOne] = range[0].split('/')
       const [monthTwo, dayTwo] = range[1].split('/')
@@ -41,11 +67,12 @@ export default function FormOne(props: Props) {
         setNewUser({
           ...newUser,
           star_sign_id: sign.id,
+          age: age,
+          compatibility: sign.default_compatibility,
         })
-        console.log(newUser)
       }
     })
-    // setFormPage(formPage + 1)
+    setFormPage(formPage + 1)
   }
 
   return (
