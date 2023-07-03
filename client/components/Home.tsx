@@ -9,22 +9,30 @@ import Nav from './Nav'
 //TODO A user can swipe through different profiles and choose to match them or not
 //TODO when a click happens, it increments the id, switching it up one
 
-
-
 function Home() {
   //* Test data
-  const testProfile = data[0]
+  const potentialMatches = data[0]
+
   const [profiles, setProfiles] = useState([] as User[])
+  const [count, setCount] = useState(1)
 
   async function handleClick() {
     const newData = (await api.fetchUsers()) as User[]
     setProfiles(newData)
   }
 
+  async function dislike() {
+    (await api.fetchUser(count)) as User
+    setCount(count + 1)
+
+    console.log(count)
+
+    /*setProfiles()*/
+  }
+
   return (
     <>
       <Header />
-
       return (
       <div className="profile-container">
         <Header />
@@ -33,17 +41,13 @@ function Home() {
         {profiles.map((user) => {
           return <h2 key={user.id}>{`${user.name} ${user.starSignId}`}</h2>
         })}
-        <h1>
-          {testProfile.name}&apos;s Profile {testProfile.starSign}
-        </h1>
+        <h1>{potentialMatches.name}&apos;s Profile</h1>
 
-        <img src={'/' + testProfile.image} alt="Steve's profile" />
-        <p className="profile-Info">Age: {testProfile.age}</p>
-        <p className="profile-Info">Gender: {testProfile.gender}</p>
-        <p className="profile-Info">Prefers: {testProfile.preference}</p>
-        <p className="profile-Info">Bio: {testProfile.bio}</p>
-        <p className="profile-Info">DoB: {testProfile.birthday}</p>
-        <p className="profile-Info">{testProfile.compatibility}</p>
+        <img src="images/icons/square.png" alt="square" />
+        <button onClick={dislike}>Dislike</button>
+        <button>Like</button>
+        <p className="profile-Info">Age: {potentialMatches.age}</p>
+        <p className="profile-Info">Gender: {potentialMatches.gender}</p>
       </div>
       )
       <Nav />

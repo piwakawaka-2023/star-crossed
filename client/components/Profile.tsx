@@ -28,10 +28,7 @@ export default function DisplayProfile() {
       <div className="info-container">
         <p className="profile-Info">Age: {testProfile.age}</p>
         <p className="profile-Info">Gender: {testProfile.gender}</p>
-        <p className="profile-Info">Prefers: {testProfile.preference}</p>
         <p className="profile-Info">Bio: {testProfile.bio}</p>
-        <p className="profile-Info">DoB: {testProfile.birthday}</p>
-        <p className="profile-Info">{testProfile.matches}</p>
         <p className="profile-Info">{testProfile.compatibility}</p>
       </div>
     </div>
