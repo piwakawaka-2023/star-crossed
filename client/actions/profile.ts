@@ -1,6 +1,6 @@
 import { User, UserData, EditUserData } from '../../models/Users'
 
-import * as api from '../apis/profile'
+import * as api from '../apis/users'
 import { ThunkAction } from '../store'
 
 export const SET_PROFILE = 'SET_PROFILE'
@@ -52,13 +52,10 @@ export function setUserThunk(auth0Id: string): ThunkAction {
 }
 
 //! newInfo must be in a object form with correct key
-export function editUserThunk(
-  newInfo: EditUserData,
-  infoname: string
-): ThunkAction {
+export function editUserThunk(id: number, newInfo: EditUserData): ThunkAction {
   return async (dispatch) => {
     try {
-      const updatedProfile = await api.editUser(newInfo)
+      const updatedProfile = await api.editUser(id, newInfo)
       dispatch(setProfile(updatedProfile))
     } catch (err) {
       console.log('action err:', err)

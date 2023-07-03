@@ -3,6 +3,7 @@ import {
   createRoutesFromElements,
   Route,
 } from 'react-router-dom'
+
 import App from './components/App'
 import DisplayProfile from './components/Profile'
 import Landing from './components/Landing'
