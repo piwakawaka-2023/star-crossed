@@ -10,8 +10,9 @@ import Landing from './components/Landing'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route index element={<Landing />} />
-      <Route path="/profile" element={<DisplayProfile />} />
+
+      <Route path="/" element={<Landing />} />
+
     </Route>
   )
 )
