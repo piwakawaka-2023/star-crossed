@@ -1,7 +1,3 @@
-//Redirected after auth
-//useEffect makes an api call to check if you "exist"
-//If you don't, res.redirect to signup
-
 import { useAuth0 } from '@auth0/auth0-react'
 import { useEffect } from 'react'
 import { useAppDispatch } from '../hooks/hooks'
@@ -13,8 +9,8 @@ export default function Loading() {
   // const dispatch = useAppDispatch()
   useEffect(() => {
     async function getProfile() {
-      // const auth0Id = user?.sub
-      const auth0Id = '4'
+      const auth0Id = user?.sub
+      // const auth0Id = '4'
       if (auth0Id !== undefined) {
         const userData = await getProfileWithAuthInfo(auth0Id)
         userData === null

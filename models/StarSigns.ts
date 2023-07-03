@@ -1,7 +1,8 @@
 export interface StarSign {
   id: number
-  dateRange: string
+  blurb: string
+  date_range: string
   name: string
   image: string
-  defaultCompatibility: string
+  default_compatibility: string
 }

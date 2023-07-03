@@ -35,6 +35,21 @@ export interface User extends UserData {
   }
 }
 
+export interface NewUser {
+  auth0_id: string
+  name: string
+  age: number
+  email: string
+  gender: string
+  preference: string[] | string
+  bio: string
+  birthday: string
+  image: string
+  star_sign_id: number
+  matches: string
+  compatibility: string
+}
+
 export type Action =
   | { type: 'SET_PROFILE'; payload: User }
   | { type: 'DEL_PROFILE'; payload: number }
