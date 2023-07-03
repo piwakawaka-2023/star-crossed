@@ -1,44 +1,46 @@
 import { useState } from 'react'
-import * as actions from '../actions/profile'
+import { ChangeEvent, FormEvent } from 'react'
 import { useAppDispatch } from '../hooks/hooks'
 
+import { editUserThunk } from '../actions/profile'
+
 interface Props {
-  props: { id: number; name: string }
+  profileId: number
+  formId: string
 }
 
-function EditDropDown({ props }: Props) {
+function EditDropDown(props: Props) {
   const dispatch = useAppDispatch()
 
-  function dropDown() {
-    document.getElementById('myDropdown').classList.toggle('show')
-  }
+  const { formId, profileId } = props
+  const [formData, setFormData] = useState({})
 
-  //* handling the form
-  const [formData, setFormData] = useState('')
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setFormData(e.target.value)
+  const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
+    const { value, id } = evt.target
+    setFormData({
+      ...formData,
+      [id]: value,
+    })
   }
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
-    dispatch(actions.editUserThunk(props.id, { [props.name]: formData }))
+    dispatch(editUserThunk(profileId, formData))
   }
 
   return (
     <div className="dropdown">
-      <button onClick={dropDown} className="dropbtn">
-        edit
-      </button>
+      <button>edit</button>
       <div id="myDropdown" className="dropdown-content">
         <form onSubmit={handleSubmit}>
-          <label htmlFor={props.name}>{props.name}</label>
+          <label htmlFor={formId}>{formId}</label>
           <input
             type="string"
-            name={props.name}
-            id={props.name}
+            name={formId}
+            id={formId}
             onChange={handleChange}
           />
+          <button>submit</button>
         </form>
       </div>
     </div>
@@ -46,3 +48,7 @@ function EditDropDown({ props }: Props) {
 }
 
 export default EditDropDown
+
+// <button onClick={dropDown} className="dropbtn">
+//    edit
+// </button>
