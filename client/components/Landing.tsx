@@ -1,3 +1,4 @@
+import Login from './Login'
 
 export default function Landing() {
   return (
@@ -11,8 +12,8 @@ export default function Landing() {
         <li className="tagline">
           <p>Find you start crossed lover</p>
         </li>
+        <Login />
       </ul>
     </div>
   )
-
 }

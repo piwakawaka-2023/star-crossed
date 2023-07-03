@@ -3,6 +3,8 @@ import { Auth0Provider } from '@auth0/auth0-react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { RouterProvider } from 'react-router-dom'
 import router from './router'
+import { Provider } from 'react-redux'
+import store from './store'
 
 import './styles/index.scss'
 
@@ -14,7 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
       redirectUri={`${window.location.origin}/profile`}
       audience="https://star-crossed-auth/api"
     >
-      <RouterProvider router={router} />
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
     </Auth0Provider>
   )
 })
