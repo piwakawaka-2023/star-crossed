@@ -1,45 +1,59 @@
 import { User } from '../../models/Users'
 import data from '../../data/db.json'
-import { useState } from 'react'
-import * as api from '../apis/users'
+import { useState, useEffect } from 'react'
+import { addMatchThunk } from '../actions/matches'
+import { setPotentialsThunk } from '../actions/potentials'
 
 import Header from './Header'
+import Nav from './Nav'
+import { useAppDispatch, useAppSelector } from '../hooks/hooks'
+import { setProfile } from '../actions/profile'
 
 function Home() {
-  //* Test data
-  const testProfile = data[0]
-  const [profiles, setProfiles] = useState([] as User[])
+  const dispatch = useAppDispatch()
+  const [count, setCount] = useState(0)
 
-  async function handleClick() {
-    const newData = (await api.fetchUsers()) as User[]
-    setProfiles(newData)
+  const potentialMatches = useAppSelector((state) => state.potentials)
+
+  //! edit this
+  const profile = useAppSelector((state) => state.profile)
+
+  const [potentialMatch, setPotentialMatch] = useState({} as User)
+
+  useEffect(() => {
+    dispatch(setProfile(data[0]))
+  }, [])
+
+  useEffect(() => {
+    dispatch(setPotentialsThunk(data))
+    setPotentialMatch(potentialMatches[count])
+  }, [dispatch, potentialMatches, count])
+
+  async function like() {
+    dispatch(addMatchThunk(profile, potentialMatch.id))
+    setCount(count + 1)
+  }
+
+  async function dislike() {
+    setCount(count + 1)
   }
 
   return (
     <>
       <Header />
-      return (
       <div className="profile-container">
-        <Header />
-        {/* Test button */}
-        <button onClick={() => handleClick()}>Test API CALL</button>
-        {profiles.map((user) => {
-          return <h2 key={user.id}>{`${user.name} ${user.starSignId}`}</h2>
-        })}
-        <h1>
-          {testProfile.name}&apos;s Profile {testProfile.starSign}
-        </h1>
-
-        <img src={'/' + testProfile.image} alt="Steve's profile" />
-        <p className="profile-Info">Age: {testProfile.age}</p>
-        <p className="profile-Info">Gender: {testProfile.gender}</p>
-        <p className="profile-Info">Prefers: {testProfile.preference}</p>
-        <p className="profile-Info">Bio: {testProfile.bio}</p>
-        <p className="profile-Info">DoB: {testProfile.birthday}</p>
-        <p className="profile-Info">{testProfile.matches}</p>
-        <p className="profile-Info">{testProfile.compatibility}</p>
+        {potentialMatch && (
+          <div>
+            <h1>{potentialMatch.name}&apos;s Profile</h1>
+            <img src="images/icons/square.png" alt="square" />
+            <button onClick={dislike}>Dislike</button>
+            <button onClick={like}>Like</button>
+            <p className="profile-Info">Age: {potentialMatch.age}</p>
+            <p className="profile-Info">Gender: {potentialMatch.gender}</p>
+          </div>
+        )}
       </div>
-      )
+      <Nav />
     </>
   )
 }
