@@ -6,6 +6,11 @@ import * as api from '../apis/profile'
 import Header from './Header'
 import Nav from './Nav'
 
+//TODO A user can swipe through different profiles and choose to match them or not
+//TODO when a click happens, it increments the id, switching it up one
+
+
+
 function Home() {
   //* Test data
   const testProfile = data[0]

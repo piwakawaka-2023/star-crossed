@@ -18,6 +18,8 @@ export async function fetchUsers() {
 export async function fetchUser(id: number) {
   try {
     const res = await request.get(`${apiRoute}/users/${id}`)
+    const matches = res.body
+    console.log('The matches: ' + matches)
     return res.body
   } catch (err) {
     return err
