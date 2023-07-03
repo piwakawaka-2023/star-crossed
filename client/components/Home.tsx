@@ -19,6 +19,7 @@ function Home() {
   return (
     <>
       <Header />
+
       return (
       <div className="profile-container">
         <Header />
@@ -37,7 +38,6 @@ function Home() {
         <p className="profile-Info">Prefers: {testProfile.preference}</p>
         <p className="profile-Info">Bio: {testProfile.bio}</p>
         <p className="profile-Info">DoB: {testProfile.birthday}</p>
-        <p className="profile-Info">{testProfile.matches}</p>
         <p className="profile-Info">{testProfile.compatibility}</p>
       </div>
       )
