@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-import { EditUserData, User, UserData } from '../../models/Users'
+import { EditUserData, NewUser, User } from '../../models/Users'
 
 const apiRoute = 'http://localhost:3000/api/v1'
 
@@ -24,7 +24,7 @@ export async function fetchUser(id: number) {
   }
 }
 
-export async function addUser(user: UserData) {
+export async function addUser(user: NewUser) {
   try {
     const res = await request.post(`${apiRoute}/users`).send(user)
     return res.body

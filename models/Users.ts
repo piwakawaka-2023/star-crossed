@@ -7,7 +7,7 @@ export interface UserData {
   bio: string
   birthday: string
   image: string
-  starSignId: number
+  star_sign_id: number
   matches: string
   compatibility: string
 }
@@ -46,7 +46,7 @@ export interface NewUser {
   age: number
   email: string
   gender: string
-  preference: string[]
+  preference: string[] | string
   bio: string
   birthday: string
   image: string

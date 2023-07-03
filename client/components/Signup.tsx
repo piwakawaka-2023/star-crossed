@@ -11,23 +11,29 @@ import FormThree from './FormThree'
 export default function Signup() {
   const { user } = useAuth0()
   const [newUser, setNewUser] = useState({
-    auth0_id: user?.sub,
+    auth0_id: '',
     name: '',
     age: NaN,
-    email: user?.email,
+    email: '',
     gender: '',
     preference: [],
     bio: 'Tell us about yourself!',
     birthday: '',
     image: 'images/user',
     star_sign_id: NaN,
-    matches: '',
+    matches: '[]',
     compatibility: '',
   } as NewUser)
   const [formPage, setFormPage] = useState(0)
   useEffect(() => {
-    console.log(user)
-  })
+    user?.sub !== undefined && user?.email !== undefined
+      ? setNewUser({
+          ...newUser,
+          auth0_id: user?.sub,
+          email: user?.email,
+        })
+      : console.log(user)
+  }, [user])
 
   return (
     <>

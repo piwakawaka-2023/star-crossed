@@ -1,4 +1,4 @@
-import { User, UserData, EditUserData } from '../../models/Users'
+import { User, NewUser, EditUserData } from '../../models/Users'
 
 import * as api from '../apis/users'
 import { ThunkAction } from '../store'
@@ -63,11 +63,12 @@ export function editUserThunk(id: number, newInfo: EditUserData): ThunkAction {
   }
 }
 
-export function addUserThunk(profile: UserData): ThunkAction {
+export function addUserThunk(profile: NewUser): ThunkAction {
   return async (dispatch) => {
     try {
       const newProfile = await api.addUser(profile)
       dispatch(setProfile(newProfile))
+      console.log('dispatch thunk')
     } catch (err) {
       console.log('action err:', err)
     }
