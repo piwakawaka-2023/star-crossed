@@ -43,7 +43,7 @@ export function delProfile(id: number) {
 export function setUserThunk(auth0Id: string): ThunkAction {
   return async (dispatch) => {
     try {
-      const profile = await api.getProfileWithAuthInfo(auth0Id)
+      const profile = (await api.getProfileWithAuthInfo(auth0Id)) as User
       dispatch(setProfile(profile))
     } catch (err) {
       console.log('action err:', err)
@@ -74,13 +74,13 @@ export function addUserThunk(profile: UserData): ThunkAction {
   }
 }
 
-export function delUserThunk(id: number): ThunkAction {
-  return async (dispatch) => {
-    try {
-      await api.delUser(id)
-      dispatch(delProfile(id))
-    } catch (err) {
-      console.log('action err:', err)
-    }
-  }
-}
+// export function delUserThunk(id: number): ThunkAction {
+//   return async (dispatch) => {
+//     try {
+//       await api.delUser(id)
+//       dispatch(delProfile(id))
+//     } catch (err) {
+//       console.log('action err:', err)
+//     }
+//   }
+// }
