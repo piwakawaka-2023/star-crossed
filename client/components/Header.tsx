@@ -1,6 +1,3 @@
-/****************
- *    HEADER    *
- ****************/
 import { Link } from 'react-router-dom'
 import Login from './Login'
 

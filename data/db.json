@@ -22,7 +22,20 @@
     "birthday": "10/10/1999",
     "image": "../images/Stacey.jpg",
     "starSign": "♎",
-    "matches": "Steve",
+    "matches": "grace",
+    "compatibility": "Not great"
+  },
+  {
+    "id": 3,
+    "name": "Grace",
+    "age": 23,
+    "gender": "Female",
+    "preference": "Feme, them",
+    "bio": "saving grace",
+    "birthday": "10/10/1999",
+    "image": "../images/Stacey.jpg",
+    "starSign": "♎",
+    "matches": "stacey",
     "compatibility": "Not great"
   }
 ]

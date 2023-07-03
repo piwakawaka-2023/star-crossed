@@ -20,7 +20,7 @@ function Login() {
       <IfNotAuthenticated>
         <button onClick={handleSignIn}>Sign in</button>
       </IfNotAuthenticated>
-      <h1>Big HEader</h1>
+      <h1>Big Header</h1>
     </>
   )
 }

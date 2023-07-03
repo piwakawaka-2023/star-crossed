@@ -1,7 +1,7 @@
 import { User } from '../../models/Users'
 import data from '../../data/db.json'
 import { useState } from 'react'
-import * as api from '../apis/profile'
+import * as api from '../apis/users'
 
 import Header from './Header'
 
