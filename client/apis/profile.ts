@@ -26,3 +26,15 @@ export function getProfileById(id: number) {
     return err
   }
 }
+
+// CHECK FOR PROFILES WITH AUTH0 ID
+
+export function getProfileWithAuthInfo(auth0Id: string) {
+  try {
+    return request.get(`${apiRoute}/auth/${auth0Id}`).then((res) => {
+      return res.body
+    })
+  } catch (err) {
+    return err
+  }
+}

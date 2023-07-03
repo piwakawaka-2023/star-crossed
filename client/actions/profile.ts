@@ -1,6 +1,6 @@
 import { User, UserData, EditUserData } from '../../models/Users'
 
-import * as api from '../apis/users'
+import * as api from '../apis/profile'
 import { ThunkAction } from '../store'
 
 export const SET_PROFILE = 'SET_PROFILE'
