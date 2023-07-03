@@ -1,0 +1,19 @@
+.landing_container {
+  display: flex;
+  position: relative;
+  top: 35rem;
+  text-align: center;
+  
+  ul {
+    list-style: none;
+  }
+  p{
+    font-size: 60px;
+  }
+}
+
+.logo_container {
+  border: 5px solid black;
+  padding: 40px 0;
+ 
+}

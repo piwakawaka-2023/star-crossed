@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "name": "Steve",
+    "age": 27,
+    "gender": "Male",
+    "preference": "female",
+    "bio": "I am pretty Dull but I needed a longer bio so I have some more writing here lmaohow much ",
+    "birthday": "23/04/1996",
+    "image": "../images/Steve.jpg",
+    "starSign": "♉",
+    "matches": "Sarah",
+    "compatibility": "Not great"
+  },
+  {
+    "id": 2,
+    "name": "Stacey",
+    "age": 23,
+    "gender": "Female",
+    "preference": "Male",
+    "bio": "I'm one of the guys",
+    "birthday": "10/10/1999",
+    "image": "../images/Stacey.jpg",
+    "starSign": "♎",
+    "matches": "Steve",
+    "compatibility": "Not great"
+  }
+]

@@ -1,0 +1,48 @@
+.nav-container {
+  position: fixed;
+  box-sizing: border-box;
+  background-color: pink;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem;
+
+  z-index: 1;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0%;
+  height: 5%;
+ ul{
+  justify-content:center ;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+ 
+ }
+
+ li{
+  margin: 0 9%;
+  width: 8%;
+  text-align:center;
+ }
+
+ li.active{
+  background-color: #555;
+
+ }
+ li:hover{
+  background-color: #777;
+ }
+}
+
+.nav-item {
+  
+  img {
+    height: 100%;
+    width:auto;
+  }
+}
