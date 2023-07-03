@@ -51,7 +51,6 @@ export function setUserThunk(auth0Id: string): ThunkAction {
   }
 }
 
-//! newInfo must be in a object form with correct key
 export function editUserThunk(id: number, newInfo: EditUserData): ThunkAction {
   return async (dispatch) => {
     try {

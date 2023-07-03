@@ -1,18 +1,26 @@
 import { User } from '../../models/Users'
 import data from '../../data/db.json'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { setProfile } from '../actions/profile'
+import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 
 import Header from './Header'
 import EditDropDown from './EditDropDown'
 
 function Profile() {
   //Test Data
+  const dispatch = useAppDispatch()
   const testProfile = data[0]
-  const [profile, setProfile] = useState({} as User)
+  const [profile, setUserProfile] = useState({})
 
-  async function handleEdit() {
-    //* this will lead to a drop down menu which lets you edit your section
-  }
+  useEffect(() => {
+    setUserProfile(testProfile)
+    dispatch(setProfile(testProfile))
+  }, [])
+
+  // async function handleEdit() {
+  //   //* this will lead to a drop down menu which lets you edit your section
+  // }
 
   return (
     <div className="profile-container">
@@ -22,30 +30,25 @@ function Profile() {
         <h3>Images:</h3>
         <button>edit</button>
       </div>
-      <img src={'/' + testProfile.image} alt="Steve's profile" />
+      <img
+        src={'/' + testProfile.image}
+        alt={`${testProfile.name}'s profile`}
+      />
       <div className="">
         <h3>Bio:</h3>
-        <EditDropDown props={{ id: profile.id, name: 'bio' }} />
+        <EditDropDown formId={'bio'} profileId={testProfile.id} />
       </div>
       <div className="">
         <h3>Name:</h3>
-        <EditDropDown props={{ id: profile.id, name: 'name' }} />
+        <EditDropDown formId={'name'} profileId={testProfile.id} />
       </div>
       <div className="">
         <h3>Gender:</h3>
-        <EditDropDown props={{ id: profile.id, name: 'gender' }} />
+        <EditDropDown formId={'gender'} profileId={testProfile.id} />
       </div>
       <div className="">
         <h3>Preferences:</h3>
-        <EditDropDown props={{ id: profile.id, name: 'preferences' }} />
-      </div>
-      <div className="">
-        <h3>Birthday:</h3>
-        <EditDropDown props={{ id: profile.id, name: 'birthday' }} />
-      </div>
-      <div className="">
-        <h3>Compatibility:</h3>
-        <EditDropDown props={{ id: profile.id, name: 'compatibility' }} />
+        <EditDropDown formId={'preference'} profileId={testProfile.id} />
       </div>
     </div>
   )
