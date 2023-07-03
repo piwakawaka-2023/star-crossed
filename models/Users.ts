@@ -19,6 +19,7 @@ export interface EditUserData {
   preference?: string
   bio?: string
   image?: string
+  matches?: number[]
 }
 
 export interface User extends UserData {

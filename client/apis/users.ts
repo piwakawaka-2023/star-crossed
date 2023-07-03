@@ -35,7 +35,9 @@ export async function addUser(user: UserData) {
 
 export async function editUser(id: number, user: EditUserData) {
   try {
-    const res = await request.patch(`${apiRoute}/users/${id}`).send(user)
+    const res = await request
+      .patch(`${apiRoute}/users/${id}`)
+      .send(JSON.stringify(user))
     return res.body
   } catch (err) {
     return err
