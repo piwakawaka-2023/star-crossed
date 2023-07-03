@@ -13,6 +13,7 @@ function Home() {
   //* Test data
   const potentialMatches = data[0]
 
+  const [profile, setProfile] = useState(null as User | null)
   const [profiles, setProfiles] = useState([] as User[])
   const [count, setCount] = useState(1)
 
@@ -22,12 +23,12 @@ function Home() {
   }
 
   async function dislike() {
-    (await api.fetchUser(count)) as User
+    const newMatch = (await api.fetchUser(count)) as User
     setCount(count + 1)
 
     console.log(count)
 
-    /*setProfiles()*/
+    setProfile(newMatch)
   }
 
   return (
