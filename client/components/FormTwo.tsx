@@ -90,7 +90,7 @@ export default function FormTwo(props: Props) {
         <label htmlFor={'them'}>Thems</label>
       </div>
       <button onClick={back}>Back</button>
-      <button>Next</button>
+      <button className='nextButton'>Next</button>
     </form>
   )
 }

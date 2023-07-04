@@ -4,7 +4,6 @@ import FormOne from './FormOne'
 import FormTwo from './FormTwo'
 import { NewUser } from '../../models/Users'
 import FormThree from './FormThree'
-
 //Builds new user objects for the db at component level
 //Has multiple children which are form pages
 
@@ -38,6 +37,7 @@ export default function Signup() {
   return (
     <div className="form-container">
       <h1>Sign-up here</h1>
+      <img src="images/icons/tempLogo.png" alt="Star-corssed" />
       <div className="form-content">
         <div className="form">
           {formPage === 0 && (

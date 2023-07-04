@@ -1,15 +1,55 @@
+body {
+  background-color: powderblue;
+}
 
+
+//FORM HEADER
 .form-container {
   display: flex;
   position: relative;
   text-align: center;
-  background-color: gray;
-  left: 10%;
-  top: 10%
+  flex-direction: column;
+  h1 {
+    font-size: 90px;
+    color: red;
+  }
+  img {
+    position: relative;
+    left: 20rem;
+    height: 300px;
+    width: 300px;
+  }
 }
 
+.form-content {
+  position: inherit;
+  top: 10rem;
+}
+.formInput {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 
-h1 {
-  font-size: 50px;
-  color: red;
+  label {
+    font-size: 60px;
+  }
+  input {
+   background-color: silver;
+    position: inherit;
+    height: 80px;
+    width: 800px;
+    left: 10%;
+    margin-bottom: 30%;
+    font-size: 40px;
+  }
+}
+
+.nextButton {
+  position: relative;
+  top: 22rem;
+  width: 100%;
+  background-color: pink;
+  height: 10rem;
+  font-size: 40px;
 }
