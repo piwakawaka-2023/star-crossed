@@ -48,6 +48,7 @@ export default function FormThree(props: Props) {
   }
 
   return (
+
     <>
       <h1>Upload a profile photo:</h1>
       <input
@@ -68,5 +69,6 @@ export default function FormThree(props: Props) {
       <button onClick={back}>Back</button>
       <button onClick={submit}>Submit</button>
     </>
+
   )
 }

@@ -51,13 +51,19 @@ export default function FormTwo(props: Props) {
   const { newUser, setNewUser, formPage, setFormPage } = props
   return (
     <form onSubmit={addPreferences}>
-      <h2>Tell us your gender:</h2>
-      <div onChange={handleToggle}>
-        <input type="radio" value="masc" name="gender" /> Masc
-        <input type="radio" value="femme" name="gender" /> Femme
-        <input type="radio" value="them" name="gender" /> Them
+      <h2 className="formText">Tell us your gender:</h2>
+      <div onChange={handleToggle} className="formRadio">
+        <label>
+          <input type="radio" value="masc" name="gender" /> Masc
+        </label>
+        <label>
+          <input type="radio" value="femme" name="gender" /> Femme
+        </label>
+        <label>
+          <input type="radio" value="them" name="gender" /> Them
+        </label>
       </div>
-      <h2>What kind of people would you like to meet?</h2>
+      <h2 className="formText">What kind of people would you like to meet?</h2>
       <div className="formCheckbox" key={'masc'}>
         <input
           type={'checkbox'}
@@ -88,8 +94,12 @@ export default function FormTwo(props: Props) {
         ></input>
         <label htmlFor={'them'}>Thems</label>
       </div>
-      <button onClick={back}>Back</button>
-      <button>Next</button>
+
+      <div className="buttonPair">
+      <button  id='f2_back' onClick={back}>Back</button>
+      <button id ='f2_next'>Next</button>
+      </div>
+      
     </form>
   )
 }

@@ -1,5 +1,7 @@
+
 import { useEffect } from 'react'
 import { setUserThunk } from '../actions/profile'
+
 import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 import { useAuth0 } from '@auth0/auth0-react'
 import Header from './Header'

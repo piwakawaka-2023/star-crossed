@@ -4,7 +4,6 @@ import FormOne from './FormOne'
 import FormTwo from './FormTwo'
 import { NewUser } from '../../models/Users'
 import FormThree from './FormThree'
-
 //Builds new user objects for the db at component level
 //Has multiple children which are form pages
 
@@ -37,32 +36,41 @@ export default function Signup() {
   }, [user])
 
   return (
-    <>
-      <h1>Signup here</h1>
-      {formPage === 0 && (
-        <FormOne
-          newUser={newUser}
-          formPage={formPage}
-          setNewUser={setNewUser}
-          setFormPage={setFormPage}
-        />
-      )}
-      {formPage === 1 && (
-        <FormTwo
-          newUser={newUser}
-          formPage={formPage}
-          setNewUser={setNewUser}
-          setFormPage={setFormPage}
-        />
-      )}
-      {formPage === 2 && (
-        <FormThree
-          newUser={newUser}
-          formPage={formPage}
-          setNewUser={setNewUser}
-          setFormPage={setFormPage}
-        />
-      )}
-    </>
+    <div className="form-container">
+      <h1>Sign-up here</h1>
+      <img src="images/icons/tempLogo.png" alt="Star-corssed" />
+      <div className="form-content">
+        <div className="form">
+          {formPage === 0 && (
+            <FormOne
+              newUser={newUser}
+              formPage={formPage}
+              setNewUser={setNewUser}
+              setFormPage={setFormPage}
+            />
+          )}
+        </div>
+        <div className="form">
+          {formPage === 1 && (
+            <FormTwo
+              newUser={newUser}
+              formPage={formPage}
+              setNewUser={setNewUser}
+              setFormPage={setFormPage}
+            />
+          )}
+        </div>
+        <div className="form">
+          {formPage === 2 && (
+            <FormThree
+              newUser={newUser}
+              formPage={formPage}
+              setNewUser={setNewUser}
+              setFormPage={setFormPage}
+            />
+          )}
+        </div>
+      </div>
+    </div>
   )
 }
