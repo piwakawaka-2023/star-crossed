@@ -1,5 +1,6 @@
 .formText {
   font-size: 50px;
+  color: #f0efef;
 }
 
   .formRadio {
@@ -8,8 +9,10 @@
     margin-bottom: 10rem;
     label {
       font-size: 45px;
+      color: #f0efef;
     }
     input {
+      
       height: 50px;
       width: 30px;
     }
@@ -18,6 +21,7 @@
 .formCheckbox {
   label {
     font-size: 45px;
+    color: #f0efef;
   }
   input {
     height: 50px;

@@ -95,7 +95,9 @@ export default function FormOne(props: Props) {
           value={newUser.birthday}
           onChange={handleChange}
         />
-        <button className="buttonSolo">Next</button>
+        <div id="btn_solo">
+          <button className="buttonSolo">Next</button>
+        </div>
       </div>
     </form>
   )

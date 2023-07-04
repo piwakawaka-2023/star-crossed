@@ -4,7 +4,7 @@
 .header-container {
   position: fixed;
   display: flex;
-  background-color: red;
+  //background-color: rgb(33,32,99, 0.7);
   width: 100%;
   top: 0;
   left: 0%;
@@ -15,11 +15,15 @@
 }
 
 .title {
-
-  font-size: 70px;
+  position: relative;
+  font-family: cursive;
+  color: #f0efef;
+  font-size: 7rem;
   text-align: center;
   width: 60%;
-  top: 80%;
+  top: -50px;
+  text-align: left;
+  justify-content: center;
 }
 
 .logout-container {
