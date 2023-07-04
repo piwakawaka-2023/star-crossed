@@ -25,8 +25,12 @@ function Profile() {
     <div className="profile-container">
       <Header />
       <h1>
-        {name}, {age} ({star_sign.name})
+        {name}, {age}
       </h1>
+      <img
+        alt={`${star_sign.name}`}
+        src={`images/starsigns/${star_sign.name}.PNG`}
+      ></img>
       <div className=""></div>
       <img src={image} alt={`${name}'s profile`} />
       <p>{bio}</p>
