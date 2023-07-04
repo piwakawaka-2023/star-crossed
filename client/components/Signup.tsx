@@ -23,6 +23,7 @@ export default function Signup() {
     star_sign_id: NaN,
     matches: '[]',
     compatibility: '',
+    avatar: [],
   } as NewUser)
   const [formPage, setFormPage] = useState(0)
   useEffect(() => {

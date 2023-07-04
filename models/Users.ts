@@ -49,6 +49,7 @@ export interface NewUser {
   star_sign_id: number
   matches: string
   compatibility: string
+  avatar: File[]
 }
 
 export type Action =
