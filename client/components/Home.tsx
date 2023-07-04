@@ -1,5 +1,5 @@
 import { User } from '../../models/Users'
-import data from '../../data/db.json'
+
 import { useState, useEffect } from 'react'
 import { addMatchThunk } from '../actions/matches'
 import { setPotentialsThunk } from '../actions/potentials'

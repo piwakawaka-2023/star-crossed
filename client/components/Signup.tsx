@@ -36,32 +36,40 @@ export default function Signup() {
   }, [user])
 
   return (
-    <>
-      <h1>Signup here</h1>
-      {formPage === 0 && (
-        <FormOne
-          newUser={newUser}
-          formPage={formPage}
-          setNewUser={setNewUser}
-          setFormPage={setFormPage}
-        />
-      )}
-      {formPage === 1 && (
-        <FormTwo
-          newUser={newUser}
-          formPage={formPage}
-          setNewUser={setNewUser}
-          setFormPage={setFormPage}
-        />
-      )}
-      {formPage === 2 && (
-        <FormThree
-          newUser={newUser}
-          formPage={formPage}
-          setNewUser={setNewUser}
-          setFormPage={setFormPage}
-        />
-      )}
-    </>
+    <div className="form-container">
+      <h1>Sign-up here</h1>
+      <div className="form-content">
+        <div className="form">
+          {formPage === 0 && (
+            <FormOne
+              newUser={newUser}
+              formPage={formPage}
+              setNewUser={setNewUser}
+              setFormPage={setFormPage}
+            />
+          )}
+        </div>
+        <div className="form">
+          {formPage === 1 && (
+            <FormTwo
+              newUser={newUser}
+              formPage={formPage}
+              setNewUser={setNewUser}
+              setFormPage={setFormPage}
+            />
+          )}
+        </div>
+        <div className="form">
+          {formPage === 2 && (
+            <FormThree
+              newUser={newUser}
+              formPage={formPage}
+              setNewUser={setNewUser}
+              setFormPage={setFormPage}
+            />
+          )}
+        </div>
+      </div>
+    </div>
   )
 }

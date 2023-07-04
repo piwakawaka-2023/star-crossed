@@ -1,5 +1,5 @@
 import { User } from '../../models/Users'
-import data from '../../data/db.json'
+
 import { useEffect, useState } from 'react'
 import { setProfile } from '../actions/profile'
 import { useAppDispatch, useAppSelector } from '../hooks/hooks'
