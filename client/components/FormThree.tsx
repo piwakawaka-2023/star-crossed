@@ -48,15 +48,13 @@ export default function FormThree(props: Props) {
   }
 
   return (
-
-    <>
+    <div className="form3Container">
       <h1>Upload a profile photo:</h1>
-      <input
-        id="avatar"
-        name="avatar"
-        type="file"
-        onChange={handleAvatar}
-      ></input>
+      <label id="avatar">
+        Upload
+        <input id="avatar" name="avatar" type="file" onChange={handleAvatar} />
+      </label>
+
       <div className="formInput">
         <label htmlFor="bio">Write your bio:</label>
         <input
@@ -66,9 +64,14 @@ export default function FormThree(props: Props) {
           onChange={handleChange}
         />
       </div>
-      <button onClick={back}>Back</button>
-      <button onClick={submit}>Submit</button>
-    </>
-
+      <div className="buttonPair">
+        <button id="f3_back" onClick={back}>
+          Back
+        </button>
+        <button id="f3_next" onClick={submit}>
+          Submit
+        </button>
+      </div>
+    </div>
   )
 }
