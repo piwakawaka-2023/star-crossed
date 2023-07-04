@@ -1,0 +1,21 @@
+
+
+.formInput {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  label {
+    font-size: 60px;
+  }
+  input {
+   background-color: silver;
+    position: inherit;
+    height: 80px;
+    width: 800px;
+    left: 10%;
+    margin-bottom: 30%;
+    font-size: 40px;
+  }
+}
