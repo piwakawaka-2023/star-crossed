@@ -53,12 +53,28 @@ export async function removeUser(id: number) {
 }
 
 // CHECK FOR PROFILES WITH AUTH0 ID
-
 export function getProfileWithAuthInfo(auth0Id: string) {
   try {
     return request.get(`${apiRoute}/auth/${auth0Id}`).then((res) => {
       return res.body
     })
+  } catch (err) {
+    return err
+  }
+}
+
+//GET POTENTIAL MATCHES AND SORT THEM WITH USER ID
+
+export async function getPotentialsWithId(profile: User) {
+  try {
+    const res = await request.get(`${apiRoute}/potentials/${profile.id}`)
+    const potentials = res.body.filter((user: User) => {
+      const preference = JSON.parse(user.preference)
+      const bool = preference.includes(profile.gender)
+      return bool
+    })
+    console.log(potentials)
+    return potentials
   } catch (err) {
     return err
   }
