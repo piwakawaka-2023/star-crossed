@@ -85,9 +85,9 @@ export async function getPotentialsWithId(profile: User) {
       const bool = preference.includes(profile.gender)
       return bool
     })
-    console.log(potentials)
     return potentials
   } catch (err) {
+    console.log('API Error err', err)
     return err
   }
 }

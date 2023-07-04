@@ -16,7 +16,6 @@ function Home() {
   const profile = useAppSelector((state) => state.profile)
 
   const [potentialMatch, setPotentialMatch] = useState({} as User)
-  const potentials = useAppSelector((state) => state.potentials)
 
   useEffect(() => {
     dispatch(setPotentialsThunk(profile))
@@ -24,7 +23,7 @@ function Home() {
 
   useEffect(() => {
     setPotentialMatch(potentialMatches[count])
-  }, [potentials, potentialMatches, count, dispatch])
+  }, [potentialMatches, count, dispatch])
 
   async function like() {
     dispatch(addMatchThunk(profile, potentialMatch.id))
