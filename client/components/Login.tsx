@@ -18,7 +18,7 @@ function Login() {
         {user && <p>Signed in as: {user?.nickname}</p>}
       </IfAuthenticated>
       <IfNotAuthenticated>
-        <button onClick={handleSignIn}>Sign in</button>
+        <button id='sign_in_button' onClick={handleSignIn}>Sign in</button>
       </IfNotAuthenticated>
     </>
   )
