@@ -1,5 +1,5 @@
 export interface ConversationData {
-  participants: number
+  participants: string
   messages: string
   read: string
 }

@@ -42,7 +42,6 @@ export function setMatchesThunk(id: number, matches: number[]): ThunkAction {
 }
 
 export function addMatchThunk(profile: User, matchId: number): ThunkAction {
-  console.log('reaching thunks')
   return async (dispatch) => {
     try {
       const oldMatches = JSON.parse(profile.matches)
