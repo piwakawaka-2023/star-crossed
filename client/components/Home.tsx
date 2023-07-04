@@ -1,5 +1,4 @@
 import { User } from '../../models/Users'
-import data from '../../data/db.json'
 import { useState, useEffect } from 'react'
 import { addMatchThunk } from '../actions/matches'
 import { setPotentialsThunk } from '../actions/potentials'
@@ -7,27 +6,24 @@ import { setPotentialsThunk } from '../actions/potentials'
 import Header from './Header'
 import Nav from './Nav'
 import { useAppDispatch, useAppSelector } from '../hooks/hooks'
-import { setProfile } from '../actions/profile'
 
 function Home() {
   const dispatch = useAppDispatch()
   const [count, setCount] = useState(0)
 
   const potentialMatches = useAppSelector((state) => state.potentials)
-
-  //! edit this
   const profile = useAppSelector((state) => state.profile)
 
   const [potentialMatch, setPotentialMatch] = useState({} as User)
+  const potentials = useAppSelector((state) => state.potentials)
 
   useEffect(() => {
-    dispatch(setProfile(data[0]))
-  }, [])
+    dispatch(setPotentialsThunk(profile))
+  }, [profile])
 
   useEffect(() => {
-    dispatch(setPotentialsThunk(data))
     setPotentialMatch(potentialMatches[count])
-  }, [dispatch, potentialMatches, count])
+  }, [potentials, potentialMatches, count, dispatch])
 
   async function like() {
     dispatch(addMatchThunk(profile, potentialMatch.id))
