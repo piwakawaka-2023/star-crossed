@@ -78,7 +78,30 @@ body {
   }
 }
 
-.form2Buttons {
+//FORM 3
+.form3Container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  top: 5rem;
+  h2 {
+    font-size: 40px;
+  }
+}
+
+//BUTTONS
+.buttonSolo { //change to f1_button as id (and in component)
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: pink;
+  height: 10rem;
+  font-size: 40px;
+  left: 0;
+}
+
+.buttonPair {
   position: fixed;
   display: flex;
   flex-direction: row;
@@ -95,20 +118,21 @@ body {
   }
   
   #f2_next {
-    font-size: inherit;
     position: relative;
     width: 50%;
     background-color: pink;
+    font-size: inherit;
   }
-}
-
-//NEXT BUTTON
-.nextButton { //change to f1_button as id (and in component)
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: pink;
-  height: 10rem;
-  font-size: 40px;
-  left: 0;
+  #f3_back {
+    position: relative;
+    width: 50%;
+    background-color: aqua;
+    font-size: inherit;
+  }
+  #f3_next {
+    position: relative;
+    width: 50%;
+    background-color: pink;
+    font-size: inherit;
+  }
 }

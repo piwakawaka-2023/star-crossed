@@ -28,10 +28,14 @@ export default function FormThree(props: Props) {
   }
 
   return (
-    <>
+    <div className="form3Container">
+      <img src="images/icons/profileImg.png" alt="profile" />
       <h2>You&apos;ll upload an image here soon!</h2>
-      <button onClick={back}>Back</button>
-      <button onClick={submit}>Submit</button>
-    </>
+      <div className="buttonPair">
+      <button  id='f3_back' onClick={back}>Back</button>
+      <button  id='f3_next' onClick={submit}>Submit</button>
+      </div>
+      
+    </div>
   )
 }
