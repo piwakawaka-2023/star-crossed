@@ -1,8 +1,15 @@
+body {
+    background-image: url("images/starBackground.jpg");
+    background: opacity($color: #f0efef);
+   
+}
+
 .landing_container {
   display: flex;
   position: relative;
-  top: 35rem;
+  top: 30rem;
   text-align: center;
+ align-items: center;
   
   ul {
     list-style: none;
@@ -13,11 +20,18 @@
 }
 
 .logo_container {
-  border: 5px solid black;
+  position: relative;
+  left: .7rem;
   padding: 40px 0;
- 
+  background-color: rgba(33,35,111, 0.75);
+  
+  
 }
 
+p {
+  font-family: monospace;
+  color: #f0efef;
+}
 
 //Discuss about if it's needed
 #sign_in_button {
@@ -25,5 +39,9 @@
   height: 13%;
   width: 60%;
   font-size: 8rem;
-  background-color: plum;
+  background-color: rgba(rgb(33,32,99), 0.9);
+  border: rgb(26, 24, 162);
+  border-radius: 96px;
+  font-family: "Courgette", bold;
+  color: #ee596b;
 }
