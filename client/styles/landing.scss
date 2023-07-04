@@ -23,6 +23,7 @@ body {
   position: relative;
   left: .7rem;
   padding: 40px 0;
+
   background-color: rgba(33,35,111, 0.75);
   
   
@@ -33,15 +34,18 @@ p {
   color: #f0efef;
 }
 
+
 //Discuss about if it's needed
 #sign_in_button {
   position: relative;
   height: 13%;
   width: 60%;
   font-size: 8rem;
+
   background-color: rgba(rgb(33,32,99), 0.9);
   border: rgb(26, 24, 162);
   border-radius: 96px;
   font-family: "Courgette", bold;
   color: #ee596b;
+
 }
