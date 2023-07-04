@@ -45,7 +45,7 @@ export default function FormTwo(props: Props) {
         ...newUser,
         preference: prefs,
       })
-      console.log(newUser)
+      console.log(prefs)
     }
   }
   const { newUser, setNewUser, formPage, setFormPage } = props
@@ -96,10 +96,11 @@ export default function FormTwo(props: Props) {
       </div>
 
       <div className="buttonPair">
-      <button  id='f2_back' onClick={back}>Back</button>
-      <button id ='f2_next'>Next</button>
+        <button id="f2_back" onClick={back}>
+          Back
+        </button>
+        <button id="f2_next">Next</button>
       </div>
-      
     </form>
   )
 }
