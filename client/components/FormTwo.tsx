@@ -15,7 +15,6 @@ export default function FormTwo(props: Props) {
 
   function addPreferences(evt: FormEvent) {
     evt.preventDefault()
-    console.log('click')
     setFormPage(formPage + 1)
   }
 

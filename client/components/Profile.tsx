@@ -1,55 +1,49 @@
-import { User } from '../../models/Users'
-import data from '../../data/db.json'
-import { useEffect, useState } from 'react'
-import { setProfile } from '../actions/profile'
+import { useEffect } from 'react'
+import { setUserThunk } from '../actions/profile'
 import { useAppDispatch, useAppSelector } from '../hooks/hooks'
-
+import { useAuth0 } from '@auth0/auth0-react'
 import Header from './Header'
 import EditDropDown from './EditDropDown'
 
 function Profile() {
-  //Test Data
+  const { user } = useAuth0()
   const dispatch = useAppDispatch()
-  const testProfile = data[0]
-  const [profile, setUserProfile] = useState({})
+  const profile = useAppSelector((state) => state.profile)
 
   useEffect(() => {
-    setUserProfile(testProfile)
-    dispatch(setProfile(testProfile))
-  }, [])
+    console.log(user?.sub)
+    if (user?.sub !== undefined) {
+      dispatch(setUserThunk(user?.sub))
+    }
+  }, [user])
 
-  // async function handleEdit() {
-  //   //* this will lead to a drop down menu which lets you edit your section
-  // }
+  const { name, age, bio, image, star_sign } = profile
 
   return (
     <div className="profile-container">
       <Header />
-      <h1>Your Profile</h1>
-      <div className="">
-        <h3>Images:</h3>
-        <button>edit</button>
-      </div>
-      <img
-        src={'/' + testProfile.image}
-        alt={`${testProfile.name}'s profile`}
-      />
-      <div className="">
+      <h1>
+        {name}, {age} ({star_sign.name})
+      </h1>
+      <div className=""></div>
+      <img src={image} alt={`${name}'s profile`} />
+      <p>{bio}</p>
+      {/* <div className="">
         <h3>Bio:</h3>
-        <EditDropDown formId={'bio'} profileId={testProfile.id} />
+        <EditDropDown formId={'bio'} profileId={profile.id} />
       </div>
       <div className="">
         <h3>Name:</h3>
-        <EditDropDown formId={'name'} profileId={testProfile.id} />
+        <EditDropDown formId={'name'} profileId={profile.id} />
       </div>
       <div className="">
         <h3>Gender:</h3>
-        <EditDropDown formId={'gender'} profileId={testProfile.id} />
+        <EditDropDown formId={'gender'} profileId={profile.id} />
       </div>
       <div className="">
         <h3>Preferences:</h3>
-        <EditDropDown formId={'preference'} profileId={testProfile.id} />
-      </div>
+        <EditDropDown formId={'preference'} profileId={profile.id} />
+      </div> */}
     </div>
   )
 }

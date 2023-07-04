@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-import { EditUserData, NewUser, User } from '../../models/Users'
+import { EditUserData, User, UserData, NewUser } from '../../models/Users'
 
 const apiRoute = 'http://localhost:3000/api/v1'
 
@@ -25,8 +25,22 @@ export async function fetchUser(id: number) {
 }
 
 export async function addUser(user: NewUser) {
+  const [file] = user.avatar
   try {
-    const res = await request.post(`${apiRoute}/users`).send(user)
+    const res = await request
+      .post(`${apiRoute}/users`)
+      .field({ auth0_id: user.auth0_id })
+      .field({ name: user.name })
+      .field({ age: user.age })
+      .field({ gender: user.gender })
+      .field({ preference: user.preference })
+      .field({ bio: user.bio })
+      .field({ birthday: user.birthday })
+      .field({ image: user.image })
+      .field({ star_sign_id: user.star_sign_id })
+      .field({ matches: user.matches })
+      .field({ compatibility: user.compatibility })
+      .attach('avatar', file)
     return res.body
   } catch (err) {
     return err
@@ -35,9 +49,7 @@ export async function addUser(user: NewUser) {
 
 export async function editUser(id: number, user: EditUserData) {
   try {
-    const res = await request
-      .patch(`${apiRoute}/users/${id}`)
-      .send(JSON.stringify(user))
+    const res = await request.patch(`${apiRoute}/users/${id}`).send(user)
     return res.body
   } catch (err) {
     return err
