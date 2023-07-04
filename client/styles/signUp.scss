@@ -3,12 +3,13 @@ body {
 }
 
 
-//FORM HEADER
+//HEADER CONTAINER
 .form-container {
   display: flex;
   position: relative;
   text-align: center;
   flex-direction: column;
+
   h1 {
     font-size: 90px;
     color: red;
@@ -21,10 +22,13 @@ body {
   }
 }
 
+
 .form-content {
   position: inherit;
   top: 10rem;
 }
+
+//FORM ONE
 .formInput {
   position: relative;
   display: flex;
@@ -45,11 +49,66 @@ body {
   }
 }
 
+//FORM TWO
+
+.formText {
+  font-size: 50px;
+}
+
+  .formRadio {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10rem;
+    label {
+      font-size: 45px;
+    }
+    input {
+      height: 50px;
+      width: 30px;
+    }
+  }
+
+.formCheckbox {
+  label {
+    font-size: 45px;
+  }
+  input {
+    height: 50px;
+    width: 30px;
+  }
+}
+
+.form2Buttons {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  bottom: 0;
+  width: 100%;
+  height: 10rem;
+  font-size: 40px;
+  
+  #f2_back {
+    position: relative;
+    width: 50%;
+    background-color: aqua;
+    font-size: inherit;
+  }
+  
+  #f2_next {
+    font-size: inherit;
+    position: relative;
+    width: 50%;
+    background-color: pink;
+  }
+}
+
+//NEXT BUTTON
 .nextButton {
-  position: relative;
-  top: 22rem;
+  position: fixed;
+  bottom: 0;
   width: 100%;
   background-color: pink;
   height: 10rem;
   font-size: 40px;
+  left: 0;
 }
