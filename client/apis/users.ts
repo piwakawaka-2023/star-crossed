@@ -33,7 +33,7 @@ export async function addUser(user: NewUser) {
       .field({ name: user.name })
       .field({ age: user.age })
       .field({ gender: user.gender })
-      .field({ preference: user.preference })
+      .field({ preference: JSON.stringify(user.preference) })
       .field({ bio: user.bio })
       .field({ birthday: user.birthday })
       .field({ image: user.image })
@@ -83,6 +83,7 @@ export async function getPotentialsWithId(profile: User) {
     console.log(res.body)
     const potentials = res.body.filter((user: User) => {
       const preference = JSON.parse(user.preference)
+      console.log(preference)
       const bool = preference.includes(profile.gender)
       return bool
     })

@@ -33,11 +33,11 @@ export default function FormThree(props: Props) {
     })
   }
 
-  function submit(evt: FormEvent) {
+  async function submit(evt: FormEvent) {
     evt.preventDefault()
+
     setNewUser({
       ...newUser,
-      preference: JSON.stringify(newUser.preference),
     })
     dispatch(addUserThunk(newUser))
     window.location.replace('http://localhost:5173/login')
