@@ -19,7 +19,8 @@ function Home() {
 
   useEffect(() => {
     dispatch(setPotentialsThunk(profile))
-  }, [profile])
+    console.log(profile)
+  }, [])
 
   useEffect(() => {
     setPotentialMatch(potentialMatches[count])
