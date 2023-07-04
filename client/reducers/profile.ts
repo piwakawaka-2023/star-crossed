@@ -1,4 +1,4 @@
-import { User, Action } from '../../models/users'
+import { User, Action } from '../../models/Users'
 import { SET_PROFILE, DEL_PROFILE } from '../actions/profile'
 
 const initialState = {

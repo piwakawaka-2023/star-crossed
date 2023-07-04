@@ -80,14 +80,15 @@ export function getProfileWithAuthInfo(auth0Id: string) {
 export async function getPotentialsWithId(profile: User) {
   try {
     const res = await request.get(`${apiRoute}/potentials/${profile.id}`)
+    console.log(res.body)
     const potentials = res.body.filter((user: User) => {
       const preference = JSON.parse(user.preference)
       const bool = preference.includes(profile.gender)
       return bool
     })
-    console.log(potentials)
     return potentials
   } catch (err) {
+    console.log('API Error err', err)
     return err
   }
 }

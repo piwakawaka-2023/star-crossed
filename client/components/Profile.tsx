@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react'
 import { setUserThunk } from '../actions/profile'
 
@@ -6,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 import { useAuth0 } from '@auth0/auth0-react'
 import Header from './Header'
 import EditDropDown from './EditDropDown'
+import Nav from './Nav'
 
 function Profile() {
   const { user } = useAuth0()
@@ -30,6 +30,7 @@ function Profile() {
       <div className=""></div>
       <img src={image} alt={`${name}'s profile`} />
       <p>{bio}</p>
+      <Nav />
       {/* <div className="">
         <h3>Bio:</h3>
         <EditDropDown formId={'bio'} profileId={profile.id} />

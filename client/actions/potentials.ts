@@ -23,6 +23,7 @@ export function delPotential(id: number) {
 //* Thunk Actions
 //? are these even thunks?
 export function setPotentialsThunk(profile: User): ThunkAction {
+  console.log('thunk')
   return async (dispatch) => {
     try {
       const potentials = await getPotentialsWithId(profile)
