@@ -51,6 +51,7 @@ export function setUserThunk(auth0Id: string): ThunkAction {
   }
 }
 
+//! newInfo must be in a object form with correct key
 export function editUserThunk(id: number, newInfo: EditUserData): ThunkAction {
   return async (dispatch) => {
     try {
@@ -67,7 +68,6 @@ export function addUserThunk(profile: NewUser): ThunkAction {
     try {
       const newProfile = await api.addUser(profile)
       dispatch(setProfile(newProfile))
-      console.log('dispatch thunk')
     } catch (err) {
       console.log('action err:', err)
     }
