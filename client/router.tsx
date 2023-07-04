@@ -10,6 +10,8 @@ import Loading from './components/Loading'
 import Signup from './components/Signup'
 import Profile from './components/Profile'
 import Home from './components/Home'
+import Messages from './components/Messages'
+import Message from './components/Message'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +21,8 @@ const router = createBrowserRouter(
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Loading />} />
       <Route path="/home" element={<Home />} />
+      <Route path="/messages" element={<Messages />} />
+      <Route path="/message" element={<Message />} />
     </Route>
   )
 )

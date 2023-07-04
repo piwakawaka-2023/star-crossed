@@ -1,7 +1,7 @@
 export interface ConversationData {
-  user_id: number
-  date: string
-  contents: string
+  participants: number
+  messages: string
+  read: string
 }
 
 export interface Conversation extends ConversationData {

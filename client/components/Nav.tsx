@@ -4,6 +4,7 @@ function Nav() {
     <div className="nav">
       <Link to={'/profile'}>profile</Link>
       <Link to={'/home'}>home</Link>
+      <Link to={'/messages'}>messages</Link>
     </div>
   )
 }
