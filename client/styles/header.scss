@@ -1,29 +1,28 @@
 .header-container {
   position: fixed;
-  display: flex;
   background-color: rgb(96, 40, 192);
-  width: 100%;
-  top: 0;
-  left: 0%;
+  width: 95%;
+  top: 2%;
+  margin: 2%;
   height: 100px;
   z-index: 10;
+  border-radius: 20px;
+  border-width: 10px;
 }
 
 .title {
   font-family: monospace;
   color: white;
   font-size: 3rem;
-  text-align: center;
-  margin-left: auto;
-  margin-top: none;
 }
 
 .logout-button {
   width: 7vw;
   height: 7vw;
-  padding-left: 25vw;
-  padding-right: 20px;
-  padding-top: 15px;
+  padding: 2vw;
+  position: absolute;
+  right: 2%;
+  top: 0;
   .button {
     background-color: none;
   }
