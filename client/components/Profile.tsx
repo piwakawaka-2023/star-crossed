@@ -11,7 +11,6 @@ function Profile() {
   const profile = useAppSelector((state) => state.profile) as User
 
   useEffect(() => {
-    console.log(user?.sub)
     if (user?.sub !== undefined) {
       dispatch(setUserThunk(user?.sub))
     }

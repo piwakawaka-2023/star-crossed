@@ -17,7 +17,6 @@ function Login() {
         <button className="sign_in_button" onClick={handleSignOut}>
           Sign out
         </button>
-        {user && <p>Signed in as: {user?.nickname}</p>}
       </IfAuthenticated>
       <IfNotAuthenticated>
         <button className="sign_in_button" onClick={handleSignIn}>

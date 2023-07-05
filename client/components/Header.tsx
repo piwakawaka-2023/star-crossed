@@ -5,9 +5,13 @@ export default function Header() {
   return (
     <div className="header-container">
       <h2 className="title">Star Crossed</h2>
-      <div className="logout-container">
-        <Link to="/"></Link>
-      </div>
+      <button>
+        <img
+          className="logout-button"
+          src="images/icons/logout.png"
+          alt="logout"
+        />
+      </button>
     </div>
   )
 }

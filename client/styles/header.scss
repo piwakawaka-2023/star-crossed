@@ -1,24 +1,20 @@
-
-
-//SCSS for Header Component
 .header-container {
   position: fixed;
   display: flex;
-  //background-color: rgb(33,32,99, 0.7);
+  background-color: rgb(96, 40, 192);
   width: 100%;
   top: 0;
   left: 0%;
   height: 150px;
   float: left;
-  overflow: hidden;
   z-index: 10;
 }
 
 .title {
   position: relative;
-  font-family: cursive;
-  color: #f0efef;
-  font-size: 7rem;
+  font-family: monospace;
+  color: white;
+  font-size: 3rem;
   text-align: center;
   width: 60%;
   top: -50px;
@@ -26,19 +22,10 @@
   justify-content: center;
 }
 
-.logout-container {
-  position: relative;
-  float: right;
-  
-  right: -15%;
-  height: 45%;
-  width: 20%;
-  top: 54%;
-  button{
-    font-size: 40px;
-    width: 80%;
-    height: 100%;
-    background-color: red;
-    border-bottom: none;
+.logout-button {
+  width: 10vw;
+  height: 10vw;
+  button {
+    background-color: none;
   }
 }

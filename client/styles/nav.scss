@@ -1,7 +1,7 @@
 .nav-container {
   position: fixed;
   box-sizing: border-box;
-  background-color: pink;
+  background-color: rgb(96, 40, 192);
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -40,9 +40,7 @@
 }
 
 .nav-item {
-  
-  img {
-    height: 100%;
-    width:auto;
-  }
+  width: 8vw;
+  height: 8vw;
+  padding: 2vw;
 }

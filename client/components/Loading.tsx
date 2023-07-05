@@ -6,7 +6,6 @@ import { getProfileWithAuthInfo } from '../apis/users'
 
 export default function Loading() {
   const { user } = useAuth0()
-  // const dispatch = useAppDispatch()
   useEffect(() => {
     async function getProfile() {
       const auth0Id = await user?.sub
@@ -22,16 +21,7 @@ export default function Loading() {
 
   return (
     <div className="loadingContainer">
-      <p id="load">Loading ...</p>
-      <iframe
-        id="load_gif"
-        title="load"
-        src="https://giphy.com/embed/3o7bu3XilJ5BOiSGic"
-        width="480"
-        height="480"
-        className="giphy-embed"
-        allowFullScreen
-      ></iframe>
+      <img src="images/icons/loading.gif" alt="loading"></img>
     </div>
   )
 }
