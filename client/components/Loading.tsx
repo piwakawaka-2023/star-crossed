@@ -21,5 +21,25 @@ export default function Loading() {
     getProfile()
   })
 
-  return <p>Loading ...</p>
+  return (
+    <div className="loadingContainer">
+        <p id="load">Loading ...</p>
+      <iframe
+        id="load_gif"
+        title="load"
+        src="https://giphy.com/embed/3o7bu3XilJ5BOiSGic"
+        width="480"
+        height="480"
+        className="giphy-embed"
+        allowFullScreen
+      ></iframe>
+      <p>
+        <a href="https://giphy.com/gifs/youtube-loading-gif-3o7bu3XilJ5BOiSGic">
+          via GIPHY
+        </a>
+      </p>
+    </div>
+      
+    
+  )
 }
