@@ -1,0 +1,49 @@
+body {
+    background-image: url("images/starBackground.jpg");
+    background: opacity($color: #f0efef);
+   
+}
+
+.landing_container {
+  display: flex;
+  position: relative;
+  top: 30rem;
+  text-align: center;
+ align-items: center;
+  
+  ul {
+    list-style: none;
+  }
+  p{
+    font-size: 60px;
+  }
+}
+
+.logo_container {
+  position: relative;
+  left: .7rem;
+  padding: 40px 0;
+
+  background-color: rgba(33,35,111, 0.75);
+  
+  
+}
+
+p {
+  font-family: monospace;
+  color: #f0efef;
+}
+
+
+//Discuss about if it's needed
+#sign_in_button {
+  position: relative;
+  height: 13%;
+  width: 60%;
+  font-size: 7.5rem;
+  background-color: rgba(240, 239, 239, 0.9);
+  border: rgb(26, 24, 162);
+  border-radius: 96px;
+  font-family: cursive;
+  color: #ee596b;
+}
