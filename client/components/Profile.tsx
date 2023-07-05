@@ -24,16 +24,24 @@ function Profile() {
   return (
     <div className="profile-container">
       <Header />
-      <h1>
-        {name}, {age}
-      </h1>
-      <img
-        alt={`${star_sign.name}`}
-        src={`images/starsigns/${star_sign.name}.PNG`}
-      ></img>
-      <div className=""></div>
-      <img src={image} alt={`${name}'s profile`} />
-      <p>{bio}</p>
+      <div className="bodyContainer">
+        <div className="nameContainer">
+          <h1>
+            {name}, {age}
+          </h1>
+          <img
+            alt={`${star_sign.name}`}
+            src={`images/starsigns/${star_sign.name}.PNG`}
+          />
+        </div>
+
+        <img src={image} alt={`${name}'s profile`} />
+
+        <div className="bio">
+          <p>{bio}</p>
+        </div>
+      </div>
+
       <Nav />
       {/* <div className="">
         <h3>Bio:</h3>

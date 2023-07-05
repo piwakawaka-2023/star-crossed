@@ -66,6 +66,7 @@ export async function removeUser(id: number) {
 
 // CHECK FOR PROFILES WITH AUTH0 ID
 export function getProfileWithAuthInfo(auth0Id: string) {
+  console.log(auth0Id)
   try {
     return request.get(`${apiRoute}/auth/${auth0Id}`).then((res) => {
       return res.body

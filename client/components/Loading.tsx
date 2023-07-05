@@ -1,6 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react'
 import { useEffect } from 'react'
-import { useAppDispatch } from '../hooks/hooks'
+// import { useAppDispatch } from '../hooks/hooks'
 // import { setUserThunk } from '../actions/profile'
 import { getProfileWithAuthInfo } from '../apis/users'
 
