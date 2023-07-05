@@ -1,4 +1,5 @@
 import { User } from '../../models/Users'
+import { getPotentialsWithId } from '../apis/users'
 import { ThunkAction } from '../store'
 
 export const SET_POTENTIALS = 'SET_POTENTIALS'
@@ -21,9 +22,11 @@ export function delPotential(id: number) {
 
 //* Thunk Actions
 //? are these even thunks?
-export function setPotentialsThunk(potentials: User[]): ThunkAction {
+export function setPotentialsThunk(profile: User): ThunkAction {
+  console.log('thunk')
   return async (dispatch) => {
     try {
+      const potentials = await getPotentialsWithId(profile)
       dispatch(setPotentials(potentials))
     } catch (err) {
       console.log('action err:', err)

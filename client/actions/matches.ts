@@ -8,32 +8,32 @@ export const DEL_MATCH = 'DEL_MATCH'
 export const ADD_MATCH = 'ADD_MATCH'
 
 //* Simple Actions
-export function setMatches(matches: User[]) {
+export function setMatches(matches: number[]) {
   return {
     type: SET_MATCHES,
     payload: matches,
   }
 }
 
-export function addMatch(match: User) {
+export function addMatch(matchId: number) {
   return {
     type: ADD_MATCH,
-    payload: match,
+    payload: matchId,
   }
 }
 
-export function delMatch(id: number) {
+export function delMatch(matchId: number) {
   return {
     type: DEL_MATCH,
-    payload: id,
+    payload: matchId,
   }
 }
 
 //* Thunk Actions
-export function setMatchesThunk(matches: User[]): ThunkAction {
+export function setMatchesThunk(profile: User): ThunkAction {
   return async (dispatch) => {
     try {
-      const matchesArr = await api.editUser({ matches: matches }) //! check this line plz
+      const matchesArr = JSON.parse(profile.matches)
       dispatch(setMatches(matchesArr))
     } catch (err) {
       console.log('action err:', err)
@@ -41,22 +41,29 @@ export function setMatchesThunk(matches: User[]): ThunkAction {
   }
 }
 
-export function addMatchThunk(match: User, matches: User[]): ThunkAction {
+export function addMatchThunk(
+  matches: number[],
+  profile: User,
+  matchId: number
+): ThunkAction {
+  console.log('reaching thunks')
   return async (dispatch) => {
     try {
-      const newMatches = await api.editUser({ matches: [...matches, match] })
-      dispatch(addMatch(newMatches))
+      await api.editUser(profile.id, {
+        matches: JSON.stringify([...matches, matchId]),
+      })
+      dispatch(addMatch(matchId))
     } catch (err) {
       console.log('action err:', err)
     }
   }
 }
 
-export function delMatchThunk(id: number, matches: User[]): ThunkAction {
+export function delMatchThunk(id: number, matches: number[]): ThunkAction {
   return async (dispatch) => {
     try {
-      await api.editUser({
-        matches: matches.filter((match) => match.id !== id),
+      await api.editUser(id, {
+        matches: JSON.stringify(matches.filter((match) => match !== id)),
       })
       dispatch(delMatch(id))
     } catch (err) {

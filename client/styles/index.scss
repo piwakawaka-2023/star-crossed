@@ -1,8 +1,11 @@
-//SCSS that is common on all components
-
-
 //import component SCSS
 @use './header.scss';
 @use './profiles.scss';
 @use './nav.scss';
-@use './landing.scss'
+@use './landing.scss';
+@use './signUp.scss';
+@use './formOne.scss';
+@use './formTwo.scss';
+@use './formThree.scss';
+@use './loading.scss';
+

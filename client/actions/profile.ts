@@ -1,6 +1,6 @@
-import { User, UserData, EditUserData } from '../../models/Users'
+import { User, NewUser, EditUserData } from '../../models/Users'
 
-import * as api from '../apis/profile'
+import * as api from '../apis/users'
 import { ThunkAction } from '../store'
 
 export const SET_PROFILE = 'SET_PROFILE'
@@ -17,12 +17,12 @@ export function setProfile(profile: User) {
 }
 
 //? check if I need this
-// export function editProfile(newProfile: User){
-//   return {
-//     type: EDIT_PROFILE,
-//     payload: newProfile
-//   }
-// }
+export function editProfile(newProfile: User) {
+  return {
+    type: EDIT_PROFILE,
+    payload: newProfile,
+  }
+}
 
 // export function addProfile(profile: UserData) {
 //   return {
@@ -43,7 +43,7 @@ export function delProfile(id: number) {
 export function setUserThunk(auth0Id: string): ThunkAction {
   return async (dispatch) => {
     try {
-      const profile = await api.getProfileWithAuthInfo(auth0Id)
+      const profile = (await api.getProfileWithAuthInfo(auth0Id)) as User
       dispatch(setProfile(profile))
     } catch (err) {
       console.log('action err:', err)
@@ -52,13 +52,10 @@ export function setUserThunk(auth0Id: string): ThunkAction {
 }
 
 //! newInfo must be in a object form with correct key
-export function editUserThunk(
-  newInfo: EditUserData,
-  infoname: string
-): ThunkAction {
+export function editUserThunk(id: number, newInfo: EditUserData): ThunkAction {
   return async (dispatch) => {
     try {
-      const updatedProfile = await api.editUser(newInfo)
+      const updatedProfile = await api.editUser(id, newInfo)
       dispatch(setProfile(updatedProfile))
     } catch (err) {
       console.log('action err:', err)
@@ -66,7 +63,7 @@ export function editUserThunk(
   }
 }
 
-export function addUserThunk(profile: UserData): ThunkAction {
+export function addUserThunk(profile: NewUser): ThunkAction {
   return async (dispatch) => {
     try {
       const newProfile = await api.addUser(profile)
@@ -77,13 +74,13 @@ export function addUserThunk(profile: UserData): ThunkAction {
   }
 }
 
-export function delUserThunk(id: number): ThunkAction {
-  return async (dispatch) => {
-    try {
-      await api.delUser(id)
-      dispatch(delProfile(id))
-    } catch (err) {
-      console.log('action err:', err)
-    }
-  }
-}
+// export function delUserThunk(id: number): ThunkAction {
+//   return async (dispatch) => {
+//     try {
+//       await api.delUser(id)
+//       dispatch(delProfile(id))
+//     } catch (err) {
+//       console.log('action err:', err)
+//     }
+//   }
+// }

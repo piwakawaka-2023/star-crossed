@@ -1,37 +1,58 @@
-import { User } from '../../models/Users'
-import data from '../../data/db.json'
-import { useState } from 'react'
-import * as api from '../apis/profile'
+import { useEffect } from 'react'
+import { setUserThunk } from '../actions/profile'
 
-export default function DisplayProfile() {
-  //Test Data
-  const testProfile = data[0]
-  const [profiles, setProfiles] = useState([] as User[])
+import { useAppDispatch, useAppSelector } from '../hooks/hooks'
+import { useAuth0 } from '@auth0/auth0-react'
+import Header from './Header'
+import EditDropDown from './EditDropDown'
+import Nav from './Nav'
 
-  async function handleClick() {
-    const newData = await api.getProfiles()
-    setProfiles(newData)
-  }
+function Profile() {
+  const { user } = useAuth0()
+  const dispatch = useAppDispatch()
+  const profile = useAppSelector((state) => state.profile)
+
+  useEffect(() => {
+    console.log(user?.sub)
+    if (user?.sub !== undefined) {
+      dispatch(setUserThunk(user?.sub))
+    }
+  }, [user])
+
+  const { name, age, bio, image, star_sign } = profile
 
   return (
     <div className="profile-container">
-      {/* Test button */}
-      <button onClick={() => handleClick()}>Test API CALL</button>
-      {profiles.map((user) => {
-        return <h2 key={user.id}>{`${user.name} ${user.star_sign.name}`}</h2>
-      })}
+      <Header />
       <h1>
-        {testProfile.name}&apos;s Profile {testProfile.starSign}
+        {name}, {age}
       </h1>
-
-      <img src={'/' + testProfile.image} alt="Steve's profile" />
-      <p className="profile-Info">Age: {testProfile.age}</p>
-      <p className="profile-Info">Gender: {testProfile.gender}</p>
-      <p className="profile-Info">Prefers: {testProfile.preference}</p>
-      <p className="profile-Info">Bio: {testProfile.bio}</p>
-      <p className="profile-Info">DoB: {testProfile.birthday}</p>
-      <p className="profile-Info">{testProfile.matches}</p>
-      <p className="profile-Info">{testProfile.compatibility}</p>
+      <img
+        alt={`${star_sign.name}`}
+        src={`images/starsigns/${star_sign.name}.PNG`}
+      ></img>
+      <div className=""></div>
+      <img src={image} alt={`${name}'s profile`} />
+      <p>{bio}</p>
+      <Nav />
+      {/* <div className="">
+        <h3>Bio:</h3>
+        <EditDropDown formId={'bio'} profileId={profile.id} />
+      </div>
+      <div className="">
+        <h3>Name:</h3>
+        <EditDropDown formId={'name'} profileId={profile.id} />
+      </div>
+      <div className="">
+        <h3>Gender:</h3>
+        <EditDropDown formId={'gender'} profileId={profile.id} />
+      </div>
+      <div className="">
+        <h3>Preferences:</h3>
+        <EditDropDown formId={'preference'} profileId={profile.id} />
+      </div> */}
     </div>
   )
 }
+
+export default Profile

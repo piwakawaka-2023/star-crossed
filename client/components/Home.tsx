@@ -1,45 +1,86 @@
 import { User } from '../../models/Users'
-import data from '../../data/db.json'
-import { useState } from 'react'
-import * as api from '../apis/profile'
+
+import { useState, useEffect } from 'react'
+import { addMatchThunk, setMatches } from '../actions/matches'
+import { setPotentialsThunk } from '../actions/potentials'
 
 import Header from './Header'
+import Nav from './Nav'
+import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 
 function Home() {
-  //* Test data
-  const testProfile = data[0]
-  const [profiles, setProfiles] = useState([] as User[])
+  const dispatch = useAppDispatch()
+  const [count, setCount] = useState(0)
 
-  async function handleClick() {
-    const newData = (await api.fetchUsers()) as User[]
-    setProfiles(newData)
+  const potentialMatches = useAppSelector((state) => state.potentials)
+  const profile = useAppSelector((state) => state.profile)
+  const matches = useAppSelector((state) => state.matches)
+
+  const [potentialMatch, setPotentialMatch] = useState({
+    auth0_id: '',
+    name: '',
+    age: NaN,
+    gender: '',
+    preference: '',
+    bio: '',
+    birthday: '',
+    image: '',
+    star_sign_id: NaN,
+    matches: '',
+    compatibility: '',
+    id: NaN,
+    star_sign: {
+      id: NaN,
+      date_range: '',
+      name: '',
+      blurb: '',
+      image: '',
+      default_compatibility: '',
+      created_at: '',
+      updated_at: '',
+    },
+  } as User)
+
+  useEffect(() => {
+    const parsedMatches = JSON.parse(profile.matches)
+    dispatch(setMatches(parsedMatches))
+    dispatch(setPotentialsThunk(profile))
+    console.log(profile)
+  }, [])
+
+  useEffect(() => {
+    setPotentialMatch(potentialMatches[count])
+  }, [potentialMatches, count, dispatch])
+
+  async function like() {
+    dispatch(addMatchThunk(matches, profile, potentialMatch.id))
+    setCount(count + 1)
+  }
+
+  async function dislike() {
+    setCount(count + 1)
   }
 
   return (
     <>
       <Header />
-      return (
       <div className="profile-container">
-        <Header />
-        {/* Test button */}
-        <button onClick={() => handleClick()}>Test API CALL</button>
-        {profiles.map((user) => {
-          return <h2 key={user.id}>{`${user.name} ${user.starSignId}`}</h2>
-        })}
-        <h1>
-          {testProfile.name}&apos;s Profile {testProfile.starSign}
-        </h1>
-
-        <img src={'/' + testProfile.image} alt="Steve's profile" />
-        <p className="profile-Info">Age: {testProfile.age}</p>
-        <p className="profile-Info">Gender: {testProfile.gender}</p>
-        <p className="profile-Info">Prefers: {testProfile.preference}</p>
-        <p className="profile-Info">Bio: {testProfile.bio}</p>
-        <p className="profile-Info">DoB: {testProfile.birthday}</p>
-        <p className="profile-Info">{testProfile.matches}</p>
-        <p className="profile-Info">{testProfile.compatibility}</p>
+        {potentialMatch && (
+          <div>
+            <h1>{potentialMatch.name}&apos;s Profile</h1>
+            <img
+              src={`images/starsigns/${potentialMatch.star_sign.name}.PNG`}
+              alt={potentialMatch.star_sign.name}
+            />
+            <img src={potentialMatch.image} alt={potentialMatch.name} />
+            <button onClick={dislike}>Dislike</button>
+            <button onClick={like}>Like</button>
+            <p className="profile-Info">Age: {potentialMatch.age}</p>
+            <p className="profile-Info">Gender: {potentialMatch.gender}</p>
+          </div>
+        )}
       </div>
-      )
+      <Nav />
     </>
   )
 }

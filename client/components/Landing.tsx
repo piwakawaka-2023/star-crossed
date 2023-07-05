@@ -10,7 +10,7 @@ export default function Landing() {
           </a>
         </li>
         <li className="tagline">
-          <p>Find you start crossed lover</p>
+          <p>Find you star crossed lover!</p>
         </li>
         <Login />
       </ul>
