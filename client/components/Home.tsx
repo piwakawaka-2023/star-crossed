@@ -62,9 +62,9 @@ function Home() {
   }
 
   return (
-    <>
+    <div className="profile-container">
       <Header />
-      <div className="profile-container">
+      <div className="bodyContainer">
         {potentialMatch && (
           <div>
             <h1>{potentialMatch.name}&apos;s Profile</h1>
@@ -79,8 +79,9 @@ function Home() {
           </div>
         )}
       </div>
+
       <Nav />
-    </>
+    </div>
   )
 }
 
