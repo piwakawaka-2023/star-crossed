@@ -23,7 +23,7 @@ export default function Loading() {
 
   return (
     <div className="loadingContainer">
-        <p id="load">Loading ...</p>
+      <p id="load">Loading ...</p>
       <iframe
         id="load_gif"
         title="load"
@@ -33,13 +33,6 @@ export default function Loading() {
         className="giphy-embed"
         allowFullScreen
       ></iframe>
-      <p>
-        <a href="https://giphy.com/gifs/youtube-loading-gif-3o7bu3XilJ5BOiSGic">
-          via GIPHY
-        </a>
-      </p>
     </div>
-      
-    
   )
 }
