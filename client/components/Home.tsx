@@ -4,6 +4,7 @@ import { addMatchThunk, setMatches } from '../actions/matches'
 import { setPotentialsThunk } from '../actions/potentials'
 import Header from './Header'
 import Nav from './Nav'
+import OuttaSwipes from './OuttaSwipes'
 import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 
 function Home() {
@@ -39,7 +40,9 @@ function Home() {
     },
   } as User)
 
-  const { name, age, gender, star_sign, bio, image } = potentialMatch
+  const { name, age, gender, star_sign, bio, image } = potentialMatch || {
+    star_sign: {},
+  }
 
   const userCompat = JSON.parse(profile.compatibility)
   const coupleCompat = userCompat[star_sign.id]
@@ -68,28 +71,32 @@ function Home() {
   return (
     <>
       <Header />
-      <div className="profile-container">
-        {potentialMatch && (
-          <div>
-            <h1>
-              {name}, {age}
-            </h1>
-            <img alt={gender} src={`images/icons/gender/${gender}.png`} />
-            <img
-              alt={`compatiblity:${coupleCompat}`}
-              src={`images/icons/compatibility/compat${coupleCompat}.png`}
-            />
-            <button onClick={dislike}>Dislike</button>
-            <button onClick={like}>Like</button>
-            <img
-              src={`images/starsigns/${star_sign.name}.PNG`}
-              alt={star_sign.name}
-            />
-            <img src={image} alt={name} />
-            <p>{bio}</p>
-          </div>
-        )}
-      </div>
+      {count < potentialMatches.length && (
+        <div className="profile-container">
+          {potentialMatch && (
+            <div>
+              <h1>
+                {name}, {age}
+              </h1>
+              <img alt={gender} src={`images/icons/gender/${gender}.png`} />
+              <img
+                alt={`compatiblity:${coupleCompat}`}
+                src={`images/icons/compatibility/compat${coupleCompat}.png`}
+              />
+              <button onClick={dislike}>Dislike</button>
+              <button onClick={like}>Like</button>
+              <img
+                src={`images/starsigns/${star_sign.name}.PNG`}
+                alt={star_sign.name}
+              />
+              <img src={image} alt={name} />
+              <p>{bio}</p>
+            </div>
+          )}
+        </div>
+      )}
+      {count >= potentialMatches.length && <OuttaSwipes />}
+
       <Nav />
     </>
   )

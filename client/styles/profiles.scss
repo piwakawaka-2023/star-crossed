@@ -2,10 +2,12 @@
   position: relative;
   text-align: center;
   top: 100px;
-  border: 1px, solid, black;
-  margin: 10px 0;
+  font-family: monospace;
+  border-radius: 100px;
+  border-width: 10px;
+  border-color: rgb(155, 154, 229);
   overflow: scroll;
-  
+
 }
 
 .top-container {
