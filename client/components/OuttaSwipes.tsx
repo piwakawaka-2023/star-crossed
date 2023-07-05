@@ -1,3 +1,7 @@
 export default function OuttaSwipes() {
-  return <h1>You Outta Swipes Bitch!</h1>
+  return (
+    <div className="title">
+      <h1>You Outta Swipes!</h1>
+    </div>
+  )
 }
