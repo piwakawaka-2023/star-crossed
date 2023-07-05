@@ -1,16 +1,14 @@
 import { useEffect } from 'react'
 import { setUserThunk } from '../actions/profile'
-
 import { useAppDispatch, useAppSelector } from '../hooks/hooks'
-import { useAuth0 } from '@auth0/auth0-react'
+import { User, useAuth0 } from '@auth0/auth0-react'
 import Header from './Header'
-import EditDropDown from './EditDropDown'
 import Nav from './Nav'
 
 function Profile() {
   const { user } = useAuth0()
   const dispatch = useAppDispatch()
-  const profile = useAppSelector((state) => state.profile)
+  const profile = useAppSelector((state) => state.profile) as User
 
   useEffect(() => {
     console.log(user?.sub)
@@ -31,26 +29,9 @@ function Profile() {
         alt={`${star_sign.name}`}
         src={`images/starsigns/${star_sign.name}.PNG`}
       ></img>
-      <div className=""></div>
       <img src={image} alt={`${name}'s profile`} />
       <p>{bio}</p>
       <Nav />
-      {/* <div className="">
-        <h3>Bio:</h3>
-        <EditDropDown formId={'bio'} profileId={profile.id} />
-      </div>
-      <div className="">
-        <h3>Name:</h3>
-        <EditDropDown formId={'name'} profileId={profile.id} />
-      </div>
-      <div className="">
-        <h3>Gender:</h3>
-        <EditDropDown formId={'gender'} profileId={profile.id} />
-      </div>
-      <div className="">
-        <h3>Preferences:</h3>
-        <EditDropDown formId={'preference'} profileId={profile.id} />
-      </div> */}
     </div>
   )
 }

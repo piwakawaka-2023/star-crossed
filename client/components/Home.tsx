@@ -1,9 +1,7 @@
 import { User } from '../../models/Users'
-
 import { useState, useEffect } from 'react'
 import { addMatchThunk, setMatches } from '../actions/matches'
 import { setPotentialsThunk } from '../actions/potentials'
-
 import Header from './Header'
 import Nav from './Nav'
 import { useAppDispatch, useAppSelector } from '../hooks/hooks'
@@ -13,7 +11,7 @@ function Home() {
   const [count, setCount] = useState(0)
 
   const potentialMatches = useAppSelector((state) => state.potentials)
-  const profile = useAppSelector((state) => state.profile)
+  const profile = useAppSelector((state) => state.profile) as User
   const matches = useAppSelector((state) => state.matches)
 
   const [potentialMatch, setPotentialMatch] = useState({
@@ -35,11 +33,17 @@ function Home() {
       name: '',
       blurb: '',
       image: '',
-      default_compatibility: '',
+      default_compatibility: '[]',
       created_at: '',
       updated_at: '',
     },
   } as User)
+
+  const { name, age, gender, star_sign, bio, image } = potentialMatch
+
+  const userCompat = JSON.parse(profile.compatibility)
+  const coupleCompat = userCompat[star_sign.id]
+  console.log(coupleCompat)
 
   useEffect(() => {
     const parsedMatches = JSON.parse(profile.matches)
@@ -67,16 +71,21 @@ function Home() {
       <div className="profile-container">
         {potentialMatch && (
           <div>
-            <h1>{potentialMatch.name}&apos;s Profile</h1>
+            <h1>
+              {name}, {age} {gender}
+            </h1>
             <img
-              src={`images/starsigns/${potentialMatch.star_sign.name}.PNG`}
-              alt={potentialMatch.star_sign.name}
+              alt={`compatiblity:${coupleCompat}`}
+              src={`images/icons/compatibility/compat${coupleCompat}.png`}
             />
-            <img src={potentialMatch.image} alt={potentialMatch.name} />
             <button onClick={dislike}>Dislike</button>
             <button onClick={like}>Like</button>
-            <p className="profile-Info">Age: {potentialMatch.age}</p>
-            <p className="profile-Info">Gender: {potentialMatch.gender}</p>
+            <img
+              src={`images/starsigns/${star_sign.name}.PNG`}
+              alt={star_sign.name}
+            />
+            <img src={image} alt={name} />
+            <p>{bio}</p>
           </div>
         )}
       </div>
