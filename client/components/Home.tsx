@@ -72,8 +72,9 @@ function Home() {
         {potentialMatch && (
           <div>
             <h1>
-              {name}, {age} {gender}
+              {name}, {age}
             </h1>
+            <img alt={gender} src={`images/icons/gender/${gender}.png`} />
             <img
               alt={`compatiblity:${coupleCompat}`}
               src={`images/icons/compatibility/compat${coupleCompat}.png`}

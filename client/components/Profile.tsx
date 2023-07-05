@@ -17,7 +17,7 @@ function Profile() {
     }
   }, [user])
 
-  const { name, age, bio, image, star_sign } = profile
+  const { name, age, bio, image, star_sign, gender } = profile
 
   return (
     <div className="profile-container">
@@ -25,6 +25,7 @@ function Profile() {
       <h1>
         {name}, {age}
       </h1>
+      <img alt={gender} src={`images/icons/gender/${gender}.png`} />
       <img
         alt={`${star_sign.name}`}
         src={`images/starsigns/${star_sign.name}.PNG`}
