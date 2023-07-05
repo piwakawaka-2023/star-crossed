@@ -9,8 +9,7 @@ export default function Loading() {
   // const dispatch = useAppDispatch()
   useEffect(() => {
     async function getProfile() {
-      // const auth0Id = await user?.sub
-      const auth0Id = '1'
+      const auth0Id = await user?.sub
       if (auth0Id !== undefined) {
         const userData = await getProfileWithAuthInfo(auth0Id)
         userData === null

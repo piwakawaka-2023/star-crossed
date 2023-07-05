@@ -1,7 +1,7 @@
 import { User, Action } from '../../models/users'
 import { SET_MATCHES, ADD_MATCH, DEL_MATCH } from '../actions/matches'
 
-const initialState = [] as User[]
+const initialState = [] as number[]
 
 export default function matchesReducer(state = initialState, action: Action) {
   const { type, payload } = action
@@ -11,7 +11,7 @@ export default function matchesReducer(state = initialState, action: Action) {
     case ADD_MATCH:
       return [...state, payload]
     case DEL_MATCH:
-      return state.filter((match) => match.id !== payload)
+      return state.filter((match) => match !== payload)
     default:
       return state
   }
