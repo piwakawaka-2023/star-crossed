@@ -6,11 +6,11 @@ export default function Landing() {
       <ul>
         <li className="logo_container">
           <a href="/login">
-            <img src="images/icons/tempLogo.png" alt="Our logo" />
+            <img src="images/icons/starcrossed.gif" alt="Our logo" />
           </a>
         </li>
         <li className="tagline">
-          <p>Find you star crossed lover!</p>
+          <p>Find your star crossed lover!</p>
         </li>
         <Login />
       </ul>

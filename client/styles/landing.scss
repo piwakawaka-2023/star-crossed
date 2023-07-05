@@ -1,6 +1,8 @@
 body {
-    background-image: url("images/starBackground.jpg");
-    background: opacity($color: #f0efef);
+  background-image: url("images/background.gif");
+  background: opacity($color: #f0efef);
+  background-repeat: repeat-y;
+  background-size: 100vh;
    
 }
 
@@ -9,7 +11,7 @@ body {
   position: relative;
   top: 30rem;
   text-align: center;
- align-items: center;
+  align-items: center;
   
   ul {
     list-style: none;
@@ -23,10 +25,6 @@ body {
   position: relative;
   left: .7rem;
   padding: 40px 0;
-
-  background-color: rgba(33,35,111, 0.75);
-  
-  
 }
 
 p {
@@ -36,14 +34,19 @@ p {
 
 
 //Discuss about if it's needed
-#sign_in_button {
+.sign_in_button {
   position: relative;
-  height: 13%;
-  width: 60%;
-  font-size: 7.5rem;
-  background-color: rgba(240, 239, 239, 0.9);
-  border: rgb(26, 24, 162);
-  border-radius: 96px;
-  font-family: cursive;
-  color: #ee596b;
+  height: 15rem;
+  width: 40rem;
+  font-size: 4rem;
+  background-color: rgba(139, 40, 192, 0.768);
+  color: rgb(155, 154, 229);
+  font-family: monospace;
+  border-radius: 100px;
+  border-width: 10px;
+  border-color: rgb(155, 154, 229);
+}
+
+.sign_in_button:hover {
+  background-color: rgba(93, 91, 202);
 }
