@@ -15,6 +15,7 @@ function Profile() {
   useEffect(() => {
     console.log(user?.sub)
     if (user?.sub !== undefined) {
+      // dispatch(setUserThunk(user?.sub))
       dispatch(setUserThunk('1'))
     }
   }, [user])
