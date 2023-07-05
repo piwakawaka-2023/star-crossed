@@ -20,13 +20,18 @@
     width: 40%
   }
 }
-
+.bodyContainer {
+  position: relative;
+  top: 20%;
+  padding: 5px;
+  border: #f0efef solid ;
+}
 .nameContainer {
-  justify-content: center;
+  justify-content:center ;
   position: relative;
   display: flex;
- flex-direction: row;
-  top: 10rem;
+  flex-direction: row;
+  margin: 0;
   
   img {
     width: 250px;
@@ -41,9 +46,9 @@
 }
 
 .bio {
-  z-index: 10;
+  
   position: relative;
-  top: 6rem;
+  top: 1.6rem;
   margin: 60px;
   padding: 10px;
   border: #f0efef solid ;

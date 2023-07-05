@@ -25,6 +25,7 @@ function Profile() {
   return (
     <div className="profile-container">
       <Header />
+      <div className="bodyContainer">
       <div className="nameContainer">
         <h1>
           {name}, {age}
@@ -40,6 +41,8 @@ function Profile() {
       <div className="bio">
         <p>{bio}</p>
       </div>
+      </div>
+     
 
       <Nav />
       {/* <div className="">
