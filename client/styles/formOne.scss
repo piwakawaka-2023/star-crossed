@@ -1,25 +1,24 @@
-
-
 .formInput {
   position: relative;
   display: flex;
   flex-direction: column;
   text-align: center;
+  font-family: monospace;
   label {
     font-size: 60px;
   }
   input {
-   background-color: #2596be;
+   background-color: rgba(96, 40, 192, 0.664);
     position: inherit;
+    font-family: monospace;
+    color: white;
     height: 80px;
     width: 800px;
     left: 10%;
     margin-bottom: 30%;
     font-size: 40px;
-    box-shadow: 0px 0px 5px rgba(33,35,111, 0.75);/*here change the color*/
-    border:1px solid rgba(33,35,111, 0.4);/*here change the color*/
+    border:10px solid rgb(96, 40, 192);
     border-radius: 96px;
     outline: none;
-    
   }
 }

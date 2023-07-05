@@ -1,5 +1,7 @@
 .formText {
   font-size: 50px;
+  color: white;
+  font-family: monospace;
 }
 
   .formRadio {
@@ -8,9 +10,11 @@
     margin-bottom: 10rem;
     label {
       font-size: 45px;
+      color: white;
+      font-family: monospace;
     }
     input {
-      
+      font-family: monospace;
       height: 50px;
       width: 30px;
     }
@@ -19,9 +23,12 @@
 .formCheckbox {
   label {
     font-size: 45px;
+    color: white;
+    font-family: monospace;
   }
   input {
     height: 50px;
     width: 30px;
+    font-family: monospace;
   }
 }

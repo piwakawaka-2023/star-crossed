@@ -38,7 +38,7 @@ export default function Signup() {
 
   return (
     <div className="form-container">
-      <h1>Sign-up here</h1>
+      <h1>Sign up</h1>
       <img src="images/icons/tempLogo.png" alt="Star-corssed" />
       <div className="form-content">
         <div className="form">

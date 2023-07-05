@@ -5,9 +5,8 @@
   align-items: center;
   justify-content: center;
   font-family: monospace;
+  color: white;
   top: 5rem;
-  h1 {
-  }
   h2 {
     font-size: 40px;
   }
@@ -20,7 +19,9 @@
     content: "Upload";
     width: 80%;
     height: 95px;
-    background-color: #2596be;
+    background-color: rgba(96, 40, 192, 0.664);
+    border:10px solid rgb(96, 40, 192);
+    border-radius: 96px;
     font-size: 70px;
     margin-bottom: 10rem;
     border-radius: 96px;
@@ -34,8 +35,8 @@
     width: 400px;
     height: 80px;
     font-size: 50px;
-   background-color:#2596be;
-   left: 30%;
+    background-color:#2596be;
+    left: 30%;
    
    font-family: monospace;
   }
