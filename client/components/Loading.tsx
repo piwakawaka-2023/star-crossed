@@ -1,6 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react'
 import { useEffect } from 'react'
-import { useAppDispatch } from '../hooks/hooks'
+// import { useAppDispatch } from '../hooks/hooks'
 // import { setUserThunk } from '../actions/profile'
 import { getProfileWithAuthInfo } from '../apis/users'
 
@@ -10,7 +10,6 @@ export default function Loading() {
   useEffect(() => {
     async function getProfile() {
       const auth0Id = user?.sub
-      // const auth0Id = '4'
       if (auth0Id !== undefined) {
         const userData = await getProfileWithAuthInfo(auth0Id)
         userData === null

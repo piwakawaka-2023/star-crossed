@@ -1,0 +1,57 @@
+.profile-container {
+  position: relative;
+  text-align: center;
+  top: 100px;
+  border: 1px, solid, black;
+  margin: 10px 0;
+  overflow: scroll;
+  height: 100rem;
+}
+
+.top-container {
+  width: 100%;
+  #starSign{
+  top: -156%;
+  float: right;
+  width: 5%;
+  position: relative;
+  }
+  p{
+    width: 40%
+  }
+}
+
+.nameContainer {
+  justify-content: center;
+  position: relative;
+  display: flex;
+ flex-direction: row;
+  top: 10rem;
+  
+  img {
+    width: 250px;
+    height: auto;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 100px;
+    color: #f0efef;
+  }
+}
+
+.bio {
+  z-index: 10;
+  position: relative;
+  top: 6rem;
+  margin: 60px;
+  padding: 10px;
+  border: #f0efef solid ;
+  background-color: rgba(33,35,111, 0.75);
+}
+p {
+  
+  font-size: 50px;
+}
+
+

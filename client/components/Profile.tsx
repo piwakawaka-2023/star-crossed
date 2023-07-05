@@ -13,10 +13,11 @@ function Profile() {
   const profile = useAppSelector((state) => state.profile)
 
   useEffect(() => {
-    console.log(user?.sub)
-    if (user?.sub !== undefined) {
-      dispatch(setUserThunk(user?.sub))
-    }
+    // console.log(user?.sub)
+    // if (user?.sub !== undefined) {
+    //   dispatch(setUserThunk(user?.sub))
+    // }
+    dispatch(setUserThunk('4'))
   }, [user])
 
   const { name, age, bio, image, star_sign } = profile
@@ -24,16 +25,22 @@ function Profile() {
   return (
     <div className="profile-container">
       <Header />
-      <h1>
-        {name}, {age}
-      </h1>
-      <img
-        alt={`${star_sign.name}`}
-        src={`images/starsigns/${star_sign.name}.PNG`}
-      ></img>
-      <div className=""></div>
+      <div className="nameContainer">
+        <h1>
+          {name}, {age}
+        </h1>
+        <img
+          alt={`${star_sign.name}`}
+          src={`images/starsigns/${star_sign.name}.PNG`}
+        />
+      </div>
+
       <img src={image} alt={`${name}'s profile`} />
-      <p>{bio}</p>
+
+      <div className="bio">
+        <p>{bio}</p>
+      </div>
+
       <Nav />
       {/* <div className="">
         <h3>Bio:</h3>
