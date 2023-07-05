@@ -14,11 +14,15 @@ function Login() {
   return (
     <>
       <IfAuthenticated>
-        <button onClick={handleSignOut}>Sign out</button>
+        <button className="sign_in_button" onClick={handleSignOut}>
+          Sign out
+        </button>
         {user && <p>Signed in as: {user?.nickname}</p>}
       </IfAuthenticated>
       <IfNotAuthenticated>
-        <button id='sign_in_button' onClick={handleSignIn}>Sign in</button>
+        <button className="sign_in_button" onClick={handleSignIn}>
+          Sign in
+        </button>
       </IfNotAuthenticated>
     </>
   )
