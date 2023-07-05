@@ -40,6 +40,7 @@ export default function FormThree(props: Props) {
       ...newUser,
     })
     dispatch(addUserThunk(newUser))
+    console.log(newUser)
     window.location.replace('http://localhost:5173/login')
   }
   function back(evt: FormEvent) {

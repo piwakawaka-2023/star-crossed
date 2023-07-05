@@ -72,6 +72,7 @@ function Home() {
               src={`images/starsigns/${potentialMatch.star_sign.name}.PNG`}
               alt={potentialMatch.star_sign.name}
             />
+            <img src={potentialMatch.image} alt={potentialMatch.name} />
             <button onClick={dislike}>Dislike</button>
             <button onClick={like}>Like</button>
             <p className="profile-Info">Age: {potentialMatch.age}</p>

@@ -26,6 +26,7 @@ export default function Signup() {
   } as NewUser)
   const [formPage, setFormPage] = useState(0)
   useEffect(() => {
+    console.log(user)
     user?.sub !== undefined && user?.email !== undefined
       ? setNewUser({
           ...newUser,
