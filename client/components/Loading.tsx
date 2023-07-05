@@ -10,8 +10,8 @@ export default function Loading() {
   useEffect(() => {
     async function getProfile() {
       const auth0Id = user?.sub
-      // const auth0Id = '4'
       if (auth0Id !== undefined) {
+        // const userData = await getProfileWithAuthInfo(auth0Id)
         const userData = await getProfileWithAuthInfo(auth0Id)
         userData === null
           ? window.location.replace('http://localhost:5173/signup')

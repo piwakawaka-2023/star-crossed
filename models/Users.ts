@@ -19,7 +19,7 @@ export interface EditUserData {
   preference?: string
   bio?: string
   image?: string
-  matches?: number[]
+  matches?: string
 }
 
 export interface User extends UserData {
@@ -59,6 +59,6 @@ export type Action =
   | { type: 'EDIT_PROFILE'; payload: EditUserData }
   | { type: 'SET_MATCHES'; payload: User[] }
   | { type: 'DEL_MATCH'; payload: number }
-  | { type: 'ADD_MATCH'; payload: User }
+  | { type: 'ADD_MATCH'; payload: number }
   | { type: 'SET_POTENTIALS'; payload: User[] }
   | { type: 'DEL_POTENTIAL'; payload: number }
