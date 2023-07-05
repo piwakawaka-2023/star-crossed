@@ -19,20 +19,31 @@ function Profile() {
   const { name, age, bio, image, star_sign, gender } = profile
 
   return (
-    <div className="profile-container">
+    <>
       <Header />
-      <h1>
-        {name}, {age}
-      </h1>
-      <img alt={gender} src={`images/icons/gender/${gender}.png`} />
-      <img
-        alt={`${star_sign.name}`}
-        src={`images/starsigns/${star_sign.name}.PNG`}
-      ></img>
-      <img src={image} alt={`${name}'s profile`} />
-      <p>{bio}</p>
+      <div
+        className="profile-container"
+        style={{
+          backgroundImage: `url(${image})`,
+          backgroundSize: '60vh',
+        }}
+      >
+        <div className="details-top">
+          <h1>{name}</h1>
+          <img alt={gender} src={`images/icons/gender/${gender}.png`} />
+          <img
+            className="profile-starsign"
+            alt={`${star_sign.name}`}
+            src={`images/starsigns/${star_sign.name}.PNG`}
+          ></img>
+        </div>
+        <div className="details-bottom">
+          <h2>{age}</h2>
+          <p>{bio}</p>
+        </div>
+      </div>
       <Nav />
-    </div>
+    </>
   )
 }
 
