@@ -32,7 +32,6 @@ export default function profileReducer(state = initialState, action: Action) {
     case SET_PROFILE:
       return payload
     case DEL_PROFILE:
-      //? check this
       return null
     default:
       return state

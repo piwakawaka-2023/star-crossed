@@ -17,12 +17,12 @@ export function setProfile(profile: User) {
 }
 
 //? check if I need this
-// export function editProfile(newProfile: User){
-//   return {
-//     type: EDIT_PROFILE,
-//     payload: newProfile
-//   }
-// }
+export function editProfile(newProfile: User) {
+  return {
+    type: EDIT_PROFILE,
+    payload: newProfile,
+  }
+}
 
 // export function addProfile(profile: UserData) {
 //   return {

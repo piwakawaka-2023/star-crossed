@@ -30,10 +30,10 @@ export function delMatch(matchId: number) {
 }
 
 //* Thunk Actions
-export function setMatchesThunk(id: number, matches: number[]): ThunkAction {
+export function setMatchesThunk(profile: User): ThunkAction {
   return async (dispatch) => {
     try {
-      const matchesArr = await api.editUser(id, { matches: matches })
+      const matchesArr = JSON.parse(profile.matches)
       dispatch(setMatches(matchesArr))
     } catch (err) {
       console.log('action err:', err)
@@ -41,13 +41,16 @@ export function setMatchesThunk(id: number, matches: number[]): ThunkAction {
   }
 }
 
-export function addMatchThunk(profile: User, matchId: number): ThunkAction {
+export function addMatchThunk(
+  matches: number[],
+  profile: User,
+  matchId: number
+): ThunkAction {
   console.log('reaching thunks')
   return async (dispatch) => {
     try {
-      const oldMatches = JSON.parse(profile.matches)
       await api.editUser(profile.id, {
-        matches: [...oldMatches, matchId],
+        matches: JSON.stringify([...matches, matchId]),
       })
       dispatch(addMatch(matchId))
     } catch (err) {
@@ -60,7 +63,7 @@ export function delMatchThunk(id: number, matches: number[]): ThunkAction {
   return async (dispatch) => {
     try {
       await api.editUser(id, {
-        matches: matches.filter((match) => match !== id),
+        matches: JSON.stringify(matches.filter((match) => match !== id)),
       })
       dispatch(delMatch(id))
     } catch (err) {
