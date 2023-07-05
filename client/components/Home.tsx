@@ -74,23 +74,41 @@ function Home() {
       {count < potentialMatches.length && (
         <div className="profile-container">
           {potentialMatch && (
-            <div>
-              <h1>
-                {name}, {age}
-              </h1>
-              <img alt={gender} src={`images/icons/gender/${gender}.png`} />
-              <img
-                alt={`compatiblity:${coupleCompat}`}
-                src={`images/icons/compatibility/compat${coupleCompat}.png`}
-              />
-              <button onClick={dislike}>Dislike</button>
-              <button onClick={like}>Like</button>
-              <img
-                src={`images/starsigns/${star_sign.name}.PNG`}
-                alt={star_sign.name}
-              />
-              <img src={image} alt={name} />
-              <p>{bio}</p>
+            <div
+              className="profile-container"
+              style={{
+                backgroundImage: `url(${image})`,
+                backgroundSize: '60vh',
+              }}
+            >
+              <div className="details-top">
+                <h1>{name}</h1>
+                <img alt={gender} src={`images/icons/gender/${gender}.png`} />
+                <img
+                  className="profile-starsign"
+                  src={`images/starsigns/${star_sign.name}.PNG`}
+                  alt={star_sign.name}
+                />
+              </div>
+              <div className="details-bottom">
+                <div className="top-of-details-bottom">
+                  <h2>{age}</h2>
+                  <img
+                    className="compatibility"
+                    alt={`compatiblity:${coupleCompat}`}
+                    src={`images/icons/compatibility/compat${coupleCompat}.png`}
+                  />
+                </div>
+                <p>{bio}</p>
+              </div>
+              <div className="swipey">
+                <button className="dislike" onClick={dislike}>
+                  <img src="images/icons/dislike.png" alt="dislike" />
+                </button>
+                <button className="like" onClick={like}>
+                  <img src="images/icons/like.png" alt="like" />
+                </button>
+              </div>
             </div>
           )}
         </div>
