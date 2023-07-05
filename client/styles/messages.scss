@@ -1,0 +1,57 @@
+.chatsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 10vh
+}
+
+.chat {
+  height: 10%;
+  width: 95%;
+  border-radius: 20px;
+  border-width: 10px;
+  background-color: rgb(96, 40, 192);
+  display: flex;
+  flex-direction: row;
+  margin: 2vw;
+  position: relative;
+  h2 {
+    font-size: 5rem;
+    margin-bottom: 0%;
+    display: block;
+    font-family: monospace;
+  }
+  p {
+    font-size: 3rem;
+    margin-bottom: 0%;
+    margin-top: 10px;
+    display: block;
+  }
+}
+
+.divhell {
+  display: flex;
+  width: 10%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.thumbNail {
+  object-fit: cover;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  margin: 2vw;
+}
+
+.icon {
+  width: 15vw;
+  height: 15vw;
+  padding: 2vw;
+  position: absolute;
+  right: 0.5%;
+  top: 0.5%
+}
+
