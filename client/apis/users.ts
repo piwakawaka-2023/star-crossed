@@ -93,3 +93,15 @@ export async function getPotentialsWithId(profile: User) {
     return err
   }
 }
+
+// Gets hot babes to chat up
+
+export async function getMatches(id: number) {
+  try {
+    return request.get(`${apiRoute}/matches/${id}`).then((res) => {
+      return res.body
+    })
+  } catch (err) {
+    return err
+  }
+}

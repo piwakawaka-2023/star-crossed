@@ -3,34 +3,29 @@ import { fetchUser } from '../apis/users'
 import { User } from '../../models/Users'
 import { useState, useEffect } from 'react'
 import Header from './Header'
+import { getMatches } from '../apis/users'
 
 function Messages() {
-  const matches = useAppSelector((state) => state.matches)
   const [chats, setChats] = useState([] as User[])
+  const profile = useAppSelector((state) => state.profile)
 
   useEffect(() => {
-    console.log('load')
-    matches.map((matchId) => {
-      getUser(matchId)
-      console.log(chats)
-    })
-  })
+    getChats()
+  }, [profile])
 
-  async function getUser(id: number) {
-    const user = await fetchUser(id)
-    chats.push(user)
+  async function getChats() {
+    const chats = await getMatches(profile.id)
     setChats(chats)
   }
 
   return (
     <div>
       <Header />
-      matches &&
       {chats.map((match: User) => {
         return (
           <div key={match.id}>
             <img src={match.image} alt={match.name} />
-            <h2>match.name</h2>
+            <h2>{match.name}</h2>
             <img
               src={`images/starsigns/${match.star_sign.name}.PNG`}
               alt={match.star_sign.name}
@@ -39,7 +34,6 @@ function Messages() {
           </div>
         )
       })}
-      : <p>{'no matches :('}</p>
     </div>
   )
 }
